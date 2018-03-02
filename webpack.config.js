@@ -74,7 +74,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 		 template:'template.ejs',
 		 appMountId: 'react-app-root',
-		 title: 'T^PR00M',
+		 title: 'trans lifeline chat',
 		 filename: resolve(__dirname, 'build', 'index.html'),
 	 }),
   ]
