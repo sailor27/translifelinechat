@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header';
+import Home from './Home';
 import memphis from '../assets/images/memphis.png';
 
 function App(){
@@ -7,14 +8,14 @@ function App(){
 		margin: '0px',
 		background: `url(${memphis})`,
 		backgroundSize: 'cover',
-		height: '100vh',
 		color: 'black',
 		fontFamily: 'Open Sans',
-		fontSize: '18px',
 		textAlign: 'center',
 		boxSizing: 'border-box',
 		padding: '0px',
-		width: '100vw'
+		width: '100vw',
+		display:'flex',
+		justifyContent: 'center',
 	};
 	return(
   <div style={appStyle}>
@@ -24,6 +25,7 @@ function App(){
 					--blue: #5074AB;
 					--rose: #E27995;
 					--grey: #F8F8F8;
+					--dkgrey: #979797;
 					--ltblue: #9EB9E1;
 					--light-peach: #ffe3ce;
 					--peach: #ffbdb4;
@@ -44,7 +46,7 @@ function App(){
 				}`}
     </style>
     <Header/>
-    <p style={{marginTop: '90px'}}>App Works 💕</p>
+    <Home/>
   </div>
 	);
 }
