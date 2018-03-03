@@ -1,4 +1,5 @@
 import React from 'react';
+import OperatorInfo from './OperatorInfo';
 
 function SideContent() {
 	const sideStyle = {
@@ -6,13 +7,14 @@ function SideContent() {
 		backgroundColor: '#D8D8D8',
 		display: 'flex',
 		flexFlow: 'column nowrap',
-		alignItems: 'center',
 		justifyContent: 'center',
 		height: '60vh',
 		minWidth: '400px'
 	};
 	return(
-  <div style={sideStyle}>Side Content Works!</div>
+  <div style={sideStyle}>
+    <OperatorInfo/>
+  </div>
 	);
 }
 

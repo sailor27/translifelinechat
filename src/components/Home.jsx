@@ -3,6 +3,7 @@ import Header from './Header';
 import SideContent from './SideContent';
 import Info from './Info';
 import HowTo from './HowTo';
+import Session from './Session';
 
 class Home extends React.Component{
 	constructor(props){
@@ -65,7 +66,11 @@ class Home extends React.Component{
   </div>;
 
 		if(this.state.user.isConnected){
-			mainContent=<div>conditional works!</div>;
+			mainContent=
+  <div>
+    <Info/>
+    <Session/>
+  </div>;
 		}
 
 		return(

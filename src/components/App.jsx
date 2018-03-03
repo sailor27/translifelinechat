@@ -43,6 +43,14 @@ function App(){
 
 				a:hover{
 					font-style: italic;
+				}
+				button {
+					border: 2px solid var(--dkgrey);
+					border-radius: 10px;
+					font-size: 1em;
+					padding: 10px 20px 10px 20px;
+					background-color: var(--rose);
+					color: white;
 				}`}
     </style>
     <Header/>
