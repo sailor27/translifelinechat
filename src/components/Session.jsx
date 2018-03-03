@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Message from './Message';
 function Session(){
 	const sessionStyle = {
 		marginTop: '90px',
@@ -15,11 +15,9 @@ function Session(){
 	return(
   <div style={sessionStyle}>
     <ul className='messages'>
-      <li>placeholder</li>
-      <li>placeholder</li>
-      <li>placeholder</li>
-      <li>placeholder</li>
-      <li>placeholder</li>
+      <Message/>
+      <Message/>
+      <Message/>
     </ul>
     <form>
       <input
