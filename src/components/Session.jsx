@@ -3,7 +3,6 @@ import Message from './Message';
 import PropTypes from 'prop-types';
 
 function Session(props){
-	console.log(props.currentSession.messages);
 	const sessionStyle = {
 		marginTop: '90px',
 		border: '3px solid #979797',
@@ -26,7 +25,6 @@ function Session(props){
           user={messages[i].userId}
           key={messages[i].timeStamp} />
 			)}
-
     </ul>
     <form>
       <input
@@ -60,7 +58,7 @@ function Session(props){
 			li{
 				list-style: none;
 			}
-		`}</style>
+			`}</style>
   </div>
 	);
 }

@@ -3,6 +3,7 @@ import Header from './Header';
 import SideContent from './SideContent';
 import Info from './Info';
 import HowTo from './HowTo';
+import Incoming from './Incoming';
 import Session from './Session';
 
 class Home extends React.Component{
@@ -12,7 +13,7 @@ class Home extends React.Component{
 				user: {
 					id: 'anon-345342',
 					isOperator: false,
-					isConnected: true,
+					isConnected: false,
 				},
 				operatorInfo: {
 					id: 'operator-345342',
@@ -50,7 +51,6 @@ class Home extends React.Component{
 			};
 	}
 	render(){
-		console.log(this.state.session);
 		const homeStyle = {
 				boxSizing: 'border-box',
 				marginTop: '90px',
@@ -63,17 +63,12 @@ class Home extends React.Component{
 		let mainContent =
   <div className='main'>
     <Info/>
-    <HowTo/>
+    <Incoming session={this.state.session}/>
   </div>;
 
 		if(this.state.user.isConnected){
-			mainContent=
-  <div>
-    <Info/>
-    <Session
-      currentSession={this.state.session}
-      currentUser= {this.state.user}/>
-  </div>;
+			mainContent=<div><Info/><Session currentSession={this.state.session} currentUser= {this.state.user}/>
+		  </div>;
 		}
 
 		return(
