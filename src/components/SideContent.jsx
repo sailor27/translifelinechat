@@ -1,7 +1,8 @@
 import React from 'react';
 import OperatorInfo from './OperatorInfo';
+import PropTypes from 'prop-types';
 
-function SideContent() {
+function SideContent(props) {
 	const sideStyle = {
 		border: '3px solid #979797',
 		backgroundColor: '#D8D8D8',
@@ -13,9 +14,13 @@ function SideContent() {
 	};
 	return(
   <div style={sideStyle}>
-    <OperatorInfo/>
+    <OperatorInfo operator={props.operator}/>
   </div>
 	);
 }
+
+SideContent.propTypes = {
+	operator: PropTypes.object
+};
 
 export default SideContent;

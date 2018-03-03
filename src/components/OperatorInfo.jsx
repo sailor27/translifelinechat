@@ -1,7 +1,9 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-function OperatorInfo(){
+function OperatorInfo(props){
+	console.log(props);
+	const operator = props.operator;
 	const operatorStyle = {
 		display: 'flex',
 		flexFlow: 'column nowrap',
@@ -23,11 +25,11 @@ function OperatorInfo(){
 	return(
   <div style={operatorStyle}>
     <div style={avatarStyle}>
-      <h2>operator avatar</h2>
+      <h2>{operator.avatar}</h2>
     </div>
     <div className="info">
-      <p>Sailor</p>
-      <p>Portland, OR</p>
+      <p>{operator.name}</p>
+      <p>{operator.location}</p>
       <p>Connected Now</p>
       <button>END CHAT</button>
     </div>
@@ -52,5 +54,9 @@ function OperatorInfo(){
   </div>
 	);
 }
+
+OperatorInfo.propTypes = {
+	operator: PropTypes.object
+};
 
 export default OperatorInfo;

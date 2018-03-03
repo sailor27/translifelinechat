@@ -1,6 +1,9 @@
 import React from 'react';
 import Message from './Message';
-function Session(){
+import PropTypes from 'prop-types';
+
+function Session(props){
+	console.log(props.currentSession.messages);
 	const sessionStyle = {
 		marginTop: '90px',
 		border: '3px solid #979797',
@@ -12,12 +15,18 @@ function Session(){
 		position: 'relative',
 		boxSizing: 'border-box'
 	};
+	let user = props.currentUser;
+	let messages = props.currentSession.messages;
 	return(
   <div style={sessionStyle}>
-    <ul className='messages'>
-      <Message/>
-      <Message/>
-      <Message/>
+    <ul>
+      {messages.map((message, i) =>
+        <Message message={messages[i].message}
+          time={messages[i].timeStamp}
+          user={messages[i].userId}
+          key={messages[i].timeStamp} />
+			)}
+
     </ul>
     <form>
       <input
@@ -56,5 +65,9 @@ function Session(){
 	);
 }
 
+Session.propTypes = {
+	currentSession: PropTypes.object,
+	currentUser: PropTypes.object
+};
 
 export default Session;

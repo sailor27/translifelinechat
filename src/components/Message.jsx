@@ -1,19 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function Message(){
+function Message(props){
 	const messageStyle = {
 		width: '50%',
-
 		backgroundColor: '#5074AB',
 		borderRadius: '15px',
 		padding: '12px',
-		position: 'relative'
+		position: 'relative',
+		color: 'white',
+		textAlign: 'left'
 	};
 	return(
   <div style={{margin: '30px'}}>
     <div style={messageStyle}>
-      <li>message goes here</li>
-      <div className='tri'></div>
+      <li>{props.message}</li>
+      {/* <div className='tri'></div> */}
       <style jsx>
         {`
 			li {
@@ -31,10 +33,14 @@ function Message(){
 			`}
       </style>
     </div>
-    <p style={{float: 'left', margin: '0px', color: '#979797', fontSize: '0.8em'}}>8:00pm</p>
+    <p style={{float: 'left', margin: '0px', color: '#979797', fontSize: '0.8em'}}>{props.time}</p>
   </div>
 	);
 }
 
-
+Message.propTypes = {
+	message: PropTypes.string,
+	time: PropTypes.number,
+	user: PropTypes.string
+};
 export default Message;

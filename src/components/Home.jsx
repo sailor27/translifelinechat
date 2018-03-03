@@ -50,6 +50,7 @@ class Home extends React.Component{
 			};
 	}
 	render(){
+		console.log(this.state.session);
 		const homeStyle = {
 				boxSizing: 'border-box',
 				marginTop: '90px',
@@ -69,13 +70,15 @@ class Home extends React.Component{
 			mainContent=
   <div>
     <Info/>
-    <Session/>
+    <Session
+      currentSession={this.state.session}
+      currentUser= {this.state.user}/>
   </div>;
 		}
 
 		return(
   <div style={homeStyle}>
-    <SideContent/>
+    <SideContent operator={this.state.operatorInfo}/>
     {mainContent}
     <style jsx >{`
 						.main {
