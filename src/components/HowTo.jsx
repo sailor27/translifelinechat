@@ -18,7 +18,7 @@ function HowTo() {
     <h1 style={{fontFamily:'Josefin Slab', fontWeight: 'bold'}}> How to Chat with Trans Lifeline</h1>
     <ol>
       {howToChat.map((step, index) =>
-        <div key={index} className='list'><li >{step}</li></div>)}
+        <div key={index} className='list'><li style={{marginLeft: '5px'}}>{step}</li></div>)}
     </ol>
     <button>Connect</button>
 
@@ -29,15 +29,15 @@ function HowTo() {
 				display: flex;
 				flex-flow: column nowrap;
 				justify-content: space-between;
+				max-width:650px;
 			}
 			.list{
 				border: 2px solid var(--dkgrey);
 				background-color: var(--ltblue);
-				min-height: '250px';
-				max-width: 67800px;
-				padding: 20px 20px 20px 35px;
+				min-height: '200px';
+				margin: 15px 15px 15px 0px;
+				padding: 18px;
 				border-radius: 10px;
-				margin: 10px 10px 10px 5px;
 			}
 			button {
 				border: 2px solid var(--dkgrey);

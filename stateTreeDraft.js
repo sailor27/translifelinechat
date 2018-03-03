@@ -3,7 +3,7 @@ const state = {
 	user: {
 		id: 'anon-345342',
 		isOperator: false,
-		isConnected: true,
+		isConnected: false,
 	},
 	operatorInfo: {
 		id: 'operator-345342',
