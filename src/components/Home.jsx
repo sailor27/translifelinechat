@@ -23,7 +23,7 @@ class Home extends React.Component{
 				},
 				session: {
 					id: 2,
-					timeRequested: 23411,
+					timeRequested: 1520110758097,
 					timeStarted: 23423,
 					timeClosed: 23444,
 					operatorId: 'operator-345342',

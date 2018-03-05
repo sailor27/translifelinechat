@@ -24,7 +24,9 @@ function Incoming(props){
 		justifyContent: 'center',
 		alignItems: 'center'
 	};
-	let timeWaiting = ((props.session.timeRequested) - (props.session.timeStarted));
+	let time = Date.now();
+	console.log(time);
+	let timeWaiting = ((props.session.timeRequested - time) );
 	return(
   <div style={incomingStyle}>
     <h1>Incoming Sessions</h1>
