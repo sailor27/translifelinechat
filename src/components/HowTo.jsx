@@ -10,12 +10,13 @@ function HowTo() {
 		flexFlow: 'column nowrap',
 		alignItems: 'center',
 		justifyContent: 'center',
+		marginLeft: '40px',
 		marginTop: '90px',
 		minHeight: '500px'
 	};
 	return(
   <div style={howToStyle}>
-    <h1 style={{fontFamily:'Josefin Slab', fontWeight: 'bold'}}> How to Chat with Trans Lifeline</h1>
+    <h1 style={{fontFamily:'Nunito', fontWeight: 'bold'}}> How to Chat with Trans Lifeline</h1>
     <ol>
       {howToChat.map((step, index) =>
         <div key={index} className='list'><li style={{marginLeft: '5px'}}>{step}</li></div>)}

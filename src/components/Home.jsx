@@ -13,7 +13,7 @@ class Home extends React.Component{
 			this.state={
 				user: {
 					id: 'anon-345342',
-					isOperator: false,
+					isOperator: true,
 					isConnected: false,
 				},
 				operatorInfo: {
@@ -24,7 +24,7 @@ class Home extends React.Component{
 				},
 				session: {
 					id: 2,
-					timeRequested: 1520110758097,
+					timeRequested: 1520289765616,
 					timeStarted: 23423,
 					timeClosed: 23444,
 					operatorId: 'operator-345342',

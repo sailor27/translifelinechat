@@ -24,6 +24,7 @@ function OperatorInfo(props){
 	};
 	return(
   <div style={operatorStyle}>
+    <h3>Chatting with:</h3>
     <div style={avatarStyle}>
       <h2>{operator.avatar}</h2>
     </div>

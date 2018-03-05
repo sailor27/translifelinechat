@@ -12,7 +12,8 @@ function Info() {
 	};
 	return(
   <div style={infoStyle}>
-    <h1 style={{fontFamily:'Josefin Slab', fontWeight: 'bold'}}>Trans Lifeline Chat</h1>
+    <h1>
+			Trans Lifeline Chat</h1>
     <p>{infoText}</p>
   </div>
 	);

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import moment from 'moment';
 function Incoming(props){
 	const incomingStyle = {
 		border: '3px solid #979797',
@@ -8,7 +8,7 @@ function Incoming(props){
 		display: 'flex',
 		flexFlow: 'column nowrap',
 		alignItems: 'center',
-		justifyContent: 'center',
+		justifyContent: 'flex-start',
 		padding: '15px',
 		marginTop: '90px',
 		marginLeft: '40px',
@@ -26,9 +26,9 @@ function Incoming(props){
 		justifyContent: 'center',
 		alignItems: 'center'
 	};
-	let time = Date.now();
-	console.log(time);
-	let timeWaiting = ((props.session.timeRequested - time) );
+
+
+	let waitTime = moment(props.session.timeRequested).startOf('hour').fromNow();
 	return(
   <div style={incomingStyle}>
     <h1>Incoming Sessions</h1>
@@ -36,14 +36,15 @@ function Incoming(props){
     <div className='card'>
       <div className='col'>
         <p>#{props.session.id}</p>
-        <p>Waiting for: {timeWaiting}</p>
+        <p>Requested: {waitTime}</p>
         <button>Connect</button>
       </div>
       <div className='col'>
         <p>Chatter Name</p>
         <p>Chatter Location</p>
       </div>
-      <div style={chatterAvatar}></div>
+      <div className='col' ><div style={chatterAvatar}></div></div>
+
     </div>
     <style jsx  >{`
 		.card {
@@ -58,6 +59,8 @@ function Incoming(props){
 		}
 		.col {
 			display: flex;
+			min-width: 200px;
+			align-items:center;
 			flex-flow: column nowrap;
 			line-height: 0.4em;
 		}

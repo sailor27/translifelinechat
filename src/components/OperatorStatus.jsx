@@ -6,13 +6,13 @@ function OperatorStatus(){
 		backgroundColor: '#F8F8F8',
 		minWidth: '400px',
 		padding: '20px',
+    marginLeft: '40px',
     display: 'flex',
     flexFlow: 'column nowrap'
 	};
   return(
     <div style={statusStyle}>
       <div className='top'>
-
         <h1 style={{marginRight:'90px'}}>Operator Status</h1>
         <div style={{marginTop:'50px'}}>
           <button className='unpressed'>ON CALL</button>

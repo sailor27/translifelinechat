@@ -28,6 +28,7 @@ function SideContent(props) {
 	} else if (props.user.isConnected && props.user.isOperator){
 		console.log('🔍 condition 2');
 		topBox = <ChatterInfo/>;
+		bottomBox = <ChatHistory/>;
 	} else if (props.user.isOperator){
 		console.log('🔍 condition 3');
 		topBox = <OperatorForm operator={props.operator}/>;

@@ -35,7 +35,7 @@ function App(){
 					--navy: #606f92;
 					--blueblack: rgb(19, 36, 115);
 				}
-				@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:400,700i|Open+Sans+Condensed:300,700|Open+Sans:400,700');
+				@import url('https://fonts.googleapis.com/css?family=Nunito:400,700,900 |Open+Sans+Condensed:300,700|Open+Sans:400,700');
 
 				a {
 					text-decoration: none;
@@ -70,6 +70,11 @@ function App(){
 				}
 				.lilb {
 					padding: 10px;
+				}
+
+				h1, h2, h3{
+					font-family: Nunito;
+					font-weight: 700;
 				}
 				`}
     </style>
