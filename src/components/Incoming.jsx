@@ -44,7 +44,7 @@ function Incoming(props){
       </div>
       <div style={chatterAvatar}></div>
     </div>
-    <style jsx  global>{`
+    <style jsx  >{`
 		.card {
 			display: flex;
 			justify-content: space-between;

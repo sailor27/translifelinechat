@@ -1,6 +1,7 @@
 import React from 'react';
 import OperatorInfo from './OperatorInfo';
 import OperatorForm from './OperatorForm';
+import ChatHistory from './ChatHistory';
 import PropTypes from 'prop-types';
 
 function SideContent(props) {
@@ -9,27 +10,24 @@ function SideContent(props) {
 		backgroundColor: '#D8D8D8',
 		display: 'flex',
 		flexFlow: 'column nowrap',
-		justifyContent: 'center',
-		maxHeight: '50vh',
+		alignItems: 'center',
+		maxHeight: '900px',
 		minWidth: '400px'
 	};
 
 	let topBox;
 	let bottomBox;
+
 	if(props.user.isOperator){
 		topBox = <OperatorForm operator={props.operator}/>;
-		bottomBox = <div>Chat history here</div>;
+		bottomBox = <ChatHistory/>;
 	} else {
 		topBox = <OperatorInfo operator={props.operator}/>;
 	}
 	return(
-  <div>
-    <div style={sideStyle}>
-      {topBox}
-    </div>
-    <div style={sideStyle}>
-
-    </div>
+  <div style={sideStyle}>
+    {topBox}
+    {bottomBox}
   </div>
 	);
 }
