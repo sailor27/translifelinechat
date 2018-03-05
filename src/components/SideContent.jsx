@@ -21,7 +21,6 @@ function SideContent(props) {
 	let topBox;
 	let bottomBox;
 
-
 	if(!props.user.isConnected && !props.user.isOperator){
 		console.log('🔍 condition 1');
 		topBox = <ChatterForm/>;
@@ -33,6 +32,7 @@ function SideContent(props) {
 		topBox = <OperatorForm operator={props.operator}/>;
 		bottomBox = <ChatHistory/>;
 	} else {
+		console.log('🔍 condition 4');
 		topBox = <OperatorInfo operator={props.operator}/>;
 	}
 

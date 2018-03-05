@@ -7,7 +7,8 @@ function Info() {
 		border: '3px solid #979797',
 		backgroundColor: '#F8F8F8',
 		minWidth: '400px',
-		padding: '20px'
+		padding: '20px',
+		marginLeft: '40px'
 	};
 	return(
   <div style={infoStyle}>

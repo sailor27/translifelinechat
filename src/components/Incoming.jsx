@@ -11,6 +11,7 @@ function Incoming(props){
 		justifyContent: 'center',
 		padding: '15px',
 		marginTop: '90px',
+		marginLeft: '40px',
 		minHeight: '500px',
 		overFlow: 'scroll'
 	};

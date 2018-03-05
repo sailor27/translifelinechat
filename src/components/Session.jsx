@@ -11,6 +11,7 @@ function Session(props){
 		flexFlow: 'column nowrap',
 		justifyContent: 'flex-end',
 		minHeight: '500px',
+		marginLeft: '40px',
 		position: 'relative',
 		boxSizing: 'border-box'
 	};
@@ -42,7 +43,7 @@ function Session(props){
 			}
 			input {
 				width: 100%;
-				font-size: 1.75em;
+				font-size: 1.25em;
 				line-height: 2em;
 				padding-left: 10px;
 				cursor: pointer;

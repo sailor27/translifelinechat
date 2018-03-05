@@ -1,8 +1,6 @@
 import React from 'react';
 
-
 function ChatterForm(){
-
   const chatterFormStyle={
     maxWidth: '350px'
   };

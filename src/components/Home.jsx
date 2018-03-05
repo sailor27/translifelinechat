@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from './Header';
 import SideContent from './SideContent';
 import Info from './Info';
 import HowTo from './HowTo';
 import OperatorStatus from './OperatorStatus';
 import Incoming from './Incoming';
 import Session from './Session';
+import Notes from './Notes';
 
 class Home extends React.Component{
 	constructor(props){
@@ -13,7 +13,7 @@ class Home extends React.Component{
 			this.state={
 				user: {
 					id: 'anon-345342',
-					isOperator: false,
+					isOperator: true,
 					isConnected: true,
 				},
 				operatorInfo: {
@@ -77,6 +77,7 @@ class Home extends React.Component{
   <div>
     <Info/>
     <Session currentSession={this.state.session} currentUser= {this.state.user}/>
+    <Notes id={this.state.session.id}/>
   </div>;
 		}else if (this.state.user.isOperator){
 			console.log('👁 condition 3');
