@@ -14,7 +14,7 @@ class Home extends React.Component{
 				user: {
 					id: 'anon-345342',
 					isOperator: false,
-					isConnected: false,
+					isConnected: true,
 				},
 				operatorInfo: {
 					id: 'operator-345342',

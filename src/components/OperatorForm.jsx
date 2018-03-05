@@ -1,10 +1,8 @@
 import React from 'react';
-import moment from 'moment';
 import PropTypes from 'prop-types';
 
 function OperatorForm(props){
-  console.log(props);
-  let time = moment(Date.now()).format('MMMM Do YYYY, h:mm:ss a');
+
   const operatorFormStyle={
     maxWidth: '350px'
   };
@@ -51,9 +49,8 @@ function OperatorForm(props){
           <button className='lilb'>add</button>
         </form>
         <h3>id: {props.operator.id}</h3>
-
       </div>
-      <h4> 🕑 {time}</h4>
+
       <style jsx global>{`
           .sCard {
             display: flex;
