@@ -9,6 +9,7 @@ function Incoming(props){
 		flexFlow: 'column nowrap',
 		alignItems: 'center',
 		justifyContent: 'center',
+		padding: '15px',
 		marginTop: '90px',
 		minHeight: '500px',
 		overFlow: 'scroll'
@@ -43,7 +44,7 @@ function Incoming(props){
       </div>
       <div style={chatterAvatar}></div>
     </div>
-    <style jsx >{`
+    <style jsx  global>{`
 		.card {
 			display: flex;
 			justify-content: space-between;

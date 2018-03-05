@@ -66,16 +66,18 @@ class Home extends React.Component{
 
 		if(!this.state.user.isConnected && !this.state.user.isOperator){
 			console.log('👁 condition 1');
-			mainContent = <div>
-  <Info/>
-  <HowTo/>
-			</div>;
+			mainContent =
+  <div>
+    <Info/>
+    <HowTo/>
+  </div>;
 		} else if (this.state.user.isConnected && this.state.user.isOperator){
 			console.log('👁 condition 2');
-			mainContent=<div>
-  <Info/>
-  <Session currentSession={this.state.session} currentUser= {this.state.user}/>
-			</div>;
+			mainContent=
+  <div>
+    <Info/>
+    <Session currentSession={this.state.session} currentUser= {this.state.user}/>
+  </div>;
 		}else if (this.state.user.isOperator){
 			console.log('👁 condition 3');
 			mainContent =
@@ -85,14 +87,16 @@ class Home extends React.Component{
   </div>;
 		} else {
 			console.log('👁 condition 4');
-			mainContent=<div>
-  <Info/>
-  <Session currentSession={this.state.session} currentUser= {this.state.user}/>
-			</div>;
+			mainContent=
+  <div>
+    <Info/>
+    <Session currentSession={this.state.session} currentUser= {this.state.user}/>
+  </div>;
+
 		}
 		return(
   <div style={homeStyle}>
-    <SideContent operator={this.state.operatorInfo}/>
+    <SideContent user={this.state.user} operator={this.state.operatorInfo}/>
     {mainContent}
     <style jsx >{`
 								.main {

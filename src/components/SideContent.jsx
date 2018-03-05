@@ -1,5 +1,6 @@
 import React from 'react';
 import OperatorInfo from './OperatorInfo';
+import OperatorForm from './OperatorForm';
 import PropTypes from 'prop-types';
 
 function SideContent(props) {
@@ -9,18 +10,33 @@ function SideContent(props) {
 		display: 'flex',
 		flexFlow: 'column nowrap',
 		justifyContent: 'center',
-		height: '60vh',
+		maxHeight: '50vh',
 		minWidth: '400px'
 	};
+
+	let topBox;
+	let bottomBox;
+	if(props.user.isOperator){
+		topBox = <OperatorForm operator={props.operator}/>;
+		bottomBox = <div>Chat history here</div>;
+	} else {
+		topBox = <OperatorInfo operator={props.operator}/>;
+	}
 	return(
-  <div style={sideStyle}>
-    <OperatorInfo operator={props.operator}/>
+  <div>
+    <div style={sideStyle}>
+      {topBox}
+    </div>
+    <div style={sideStyle}>
+
+    </div>
   </div>
 	);
 }
 
 SideContent.propTypes = {
-	operator: PropTypes.object
+	operator: PropTypes.object,
+	user: PropTypes.object
 };
 
 export default SideContent;
