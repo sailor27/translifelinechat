@@ -46,7 +46,8 @@ function App(){
 					font-style: italic;
 				}
 				button {
-					border: 2px solid var(--dkgrey);
+					border: 1px solid var(--dkgrey);
+					box-shadow: 0 4px 8px rgba(0,0,0,0.19), 0 1px 1px rgba(0,0,0,0.23);
 					border-radius: 10px;
 					font-size: 1em;
 					padding: 10px 20px 10px 20px;

@@ -18,8 +18,8 @@ function Header(){
 
 	return(
   <div style={headerStyle}>
-    <img style={{height: '65px', width: '65px'}}src={logo}/>
-    <img style={{height: '65px', width: '65px'}} src={burger}/>
+    <img style={{height: '65px', width: '65px', marginLeft: '20px'}}src={logo}/>
+    <img style={{height: '65px', width: '65px', marginRight:'20px'}} src={burger}/>
   </div>
 	);
 }

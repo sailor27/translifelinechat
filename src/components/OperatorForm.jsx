@@ -19,7 +19,7 @@ function OperatorForm(props){
   };
   return(
     <div style={operatorFormStyle}>
-      <h2>Operator Info:</h2>
+      <h2>Operator Info</h2>
       <div className='sCard'>
 
         <div style={avatarStyle}>

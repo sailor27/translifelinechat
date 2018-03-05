@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function OperatorInfo(props){
-	console.log(props);
 	const operator = props.operator;
 	const operatorStyle = {
 		display: 'flex',
@@ -24,7 +23,7 @@ function OperatorInfo(props){
 	};
 	return(
   <div style={operatorStyle}>
-    <h3>Chatting with:</h3>
+    <h3>Chatting with</h3>
     <div style={avatarStyle}>
       <h2>{operator.avatar}</h2>
     </div>

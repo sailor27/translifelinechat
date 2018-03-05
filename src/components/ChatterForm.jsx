@@ -17,7 +17,7 @@ function ChatterForm(){
   };
   return(
     <div style={chatterFormStyle}>
-      <h2>Your Info:</h2>
+      <h2>Your Info</h2>
       <div className='sCard'>
         <small>Adding information is optional. </small>
         <small>We will not share your information with anyone.</small>
