@@ -13,8 +13,8 @@ class Home extends React.Component{
 			this.state={
 				user: {
 					id: 'anon-345342',
-					isOperator: true,
-					isConnected: true,
+					isOperator: false,
+					isConnected: false,
 				},
 				operatorInfo: {
 					id: 'operator-345342',

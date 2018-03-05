@@ -52,7 +52,26 @@ function App(){
 					padding: 10px 20px 10px 20px;
 					background-color: var(--rose);
 					color: white;
-				}`}
+				}
+				.sCard {
+					display: flex;
+					justify-content: space-between;
+					flex-flow: column nowrap;
+					align-items: center;
+					background-color: var(--grey);
+					border: 2px solid var(--dkgrey);
+					min-width: 300px;
+					border-radius: 10px;
+					padding: 30px;
+				}
+				input {
+					font-size: 1em;
+					margin: 5px;
+				}
+				.lilb {
+					padding: 10px;
+				}
+				`}
     </style>
     <Header/>
     <Home/>

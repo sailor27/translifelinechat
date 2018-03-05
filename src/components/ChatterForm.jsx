@@ -18,32 +18,35 @@ function ChatterForm(){
   return(
     <div style={chatterFormStyle}>
       <h2>Your Info:</h2>
-      <small>Your information is optional and confidential</small>
       <div className='sCard'>
+        <small>Adding information is optional. </small>
+        <small>We will not share your information with anyone.</small>
 
         <div style={avatarStyle}>
-          <form>
+          <form style={{float:'left'}}>
             <input
               type='text'
               id='avatar'
-              placeholder= 'paste and image url'
+              placeholder= 'paste an image url'
               />
             <button className='lilb'>add</button>
           </form>
         </div>
         <form>
+          <label>your name <span style={{fontSize: '0.75em'}}>(what you would like us to call you)</span></label>
           <input
             type='text'
             id='name'
-            placeholder='your name (what you would like us to call you)'
+            placeholder='ex. Jamie'
             />
           <button className='lilb'>add</button>
         </form>
+        <label style={{marginRight:'60%'}}>your location</label>
         <form>
           <input
             type='text'
             id='location'
-            placeholder='your location'
+            placeholder='ex. Sarasota, FL'
             />
           <button className='lilb'>add</button>
         </form>

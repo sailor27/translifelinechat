@@ -51,27 +51,6 @@ function OperatorForm(props){
         <h3>id: {props.operator.id}</h3>
       </div>
 
-      <style jsx global>{`
-          .sCard {
-            display: flex;
-      			justify-content: space-between;
-            flex-flow: column nowrap;
-            align-items: center;
-            background-color: var(--grey);
-            border: 2px solid var(--dkgrey);
-            min-width: 300px;
-            border-radius: 10px;
-      			padding: 30px;
-          }
-          input {
-            font-size: 1em;
-            margin: 5px;
-          }
-          .lilb {
-            padding: 10px;
-          }
-          `}
-      </style>
     </div>
   );
 }
