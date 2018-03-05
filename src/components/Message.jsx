@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Message(props){
 	const messageStyle = {
-		width: '50%',
+		minWidth: '200px',
 		backgroundColor: '#5074AB',
 		borderRadius: '15px',
 		padding: '12px',
@@ -15,7 +15,7 @@ function Message(props){
   <div style={{margin: '30px'}}>
     <div style={messageStyle}>
       <li>{props.message}</li>
-      {/* <div className='tri'></div> */}
+      <div className='tri'></div>
       <style jsx>
         {`
 			li {

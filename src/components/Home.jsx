@@ -13,8 +13,8 @@ class Home extends React.Component{
 			this.state={
 				user: {
 					id: 'anon-345342',
-					isOperator: true,
-					isConnected: false,
+					isOperator: false,
+					isConnected: true,
 				},
 				operatorInfo: {
 					id: 'operator-345342',
@@ -23,29 +23,12 @@ class Home extends React.Component{
 					location: 'Portland, OR',
 				},
 				session: {
-					id: 2,
-					timeRequested: 1520289765616,
-					timeStarted: 23423,
-					timeClosed: 23444,
-					operatorId: 'operator-345342',
+					id: null,
+					timeRequested: null,
+					timeStarted: null,
+					timeClosed: null,
+					operatorId: null,
 					messages: [
-						{
-							userId: 'anon-1233523',
-							message: 'hello',
-							timeStamp: 1
-						},{
-							userId: 'operator-345342',
-							message: 'hi there',
-							timeStamp: 2
-						},{
-							userId: 'anon-1233523',
-							message: 'how are you?',
-							timeStamp: 3
-						},{
-							userId: 'operator-345342',
-							message: 'im fine',
-							timeStamp: 4
-						}
 					],
 					notes: 'this is very productive. what a great person!'
 				}
