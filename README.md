@@ -18,7 +18,7 @@ The  purpose of this application is to provide a text-based mode of talking with
 * Can see messages sent to window by chatter
 * Can compose notes for chat session
 * Can end session
-* Has state of : on call or off call
+* Has state of : isConnected or !isConnected
 
 **Chatter:**
 * Can see chat how to before starting
