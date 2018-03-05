@@ -26,6 +26,7 @@ function App(){
 					--rose: #E27995;
 					--grey: #F8F8F8;
 					--dkgrey: #979797;
+					--mdgrey #D8D8D8;
 					--ltblue: #9EB9E1;
 					--light-peach: #ffe3ce;
 					--peach: #ffbdb4;

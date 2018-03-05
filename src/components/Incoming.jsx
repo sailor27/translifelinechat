@@ -47,6 +47,7 @@ function Incoming(props){
 		.card {
 			display: flex;
 			justify-content: space-between;
+			background-color: var(--mdgrey);
 			border: 2px solid var(--dkgrey);
 			border-radius: 10px;
 			padding: 30px;
