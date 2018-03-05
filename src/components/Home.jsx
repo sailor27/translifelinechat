@@ -12,7 +12,7 @@ class Home extends React.Component{
 			this.state={
 				user: {
 					id: 'anon-345342',
-					isOperator: false,
+					isOperator: true,
 					isConnected: false,
 				},
 				operatorInfo: {
@@ -60,31 +60,49 @@ class Home extends React.Component{
 				padding: '10px',
 				justifyContent: 'space-around',
 			};
-		let mainContent =
-  <div className='main'>
-    <Info/>
-    <Incoming session={this.state.session}/>
-  </div>;
 
-		if(this.state.user.isConnected){
-			mainContent=<div><Info/><Session currentSession={this.state.session} currentUser= {this.state.user}/>
-		  </div>;
+		let mainContent;
+
+		if(!this.state.user.isConnected && !this.state.user.isOperator){
+			console.log('👁 condition 1');
+			mainContent = <div>
+				<Info/>
+				<HowTo/>
+			</div>
+		} else if (this.state.user.isConnected && this.state.user.isOperator){
+			console.log('👁 condition 2');
+			mainContent=<div>
+				<Info/>
+				<Session currentSession={this.state.session} currentUser= {this.state.user}/>
+			</div>;
+		}else if (this.state.user.isOperator){
+			console.log('👁 condition 3');
+			mainContent =
+			<div className='main'>
+				<Info/>
+				<Incoming session={this.state.session}/>
+			</div>;
+		} else {
+			console.log('👁 condition 4');
+			mainContent=<div>
+				<Info/>
+				<Session currentSession={this.state.session} currentUser= {this.state.user}/>
+			</div>;
 		}
-
 		return(
-  <div style={homeStyle}>
-    <SideContent operator={this.state.operatorInfo}/>
-    {mainContent}
-    <style jsx >{`
-						.main {
-							display:flex;
-							flex-flow: column;
-							align-items: center;
-							min-width: 400px;
-							padding: 40px;
-						}
-					`}</style>
-  </div>
+		  <div style={homeStyle}>
+		    <SideContent operator={this.state.operatorInfo}/>
+		    {mainContent}
+		    <style jsx >{`
+								.main {
+									display:flex;
+									flex-flow: column;
+									align-items: center;
+									min-width: 400px;
+									padding: 40px;
+								}
+							`}</style>
+		  </div>
 		);
 	}
 }
