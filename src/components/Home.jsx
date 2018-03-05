@@ -3,6 +3,7 @@ import Header from './Header';
 import SideContent from './SideContent';
 import Info from './Info';
 import HowTo from './HowTo';
+import OperatorStatus from './OperatorStatus';
 import Incoming from './Incoming';
 import Session from './Session';
 
@@ -66,34 +67,34 @@ class Home extends React.Component{
 		if(!this.state.user.isConnected && !this.state.user.isOperator){
 			console.log('👁 condition 1');
 			mainContent = <div>
-				<Info/>
-				<HowTo/>
-			</div>
+  <Info/>
+  <HowTo/>
+			</div>;
 		} else if (this.state.user.isConnected && this.state.user.isOperator){
 			console.log('👁 condition 2');
 			mainContent=<div>
-				<Info/>
-				<Session currentSession={this.state.session} currentUser= {this.state.user}/>
+  <Info/>
+  <Session currentSession={this.state.session} currentUser= {this.state.user}/>
 			</div>;
 		}else if (this.state.user.isOperator){
 			console.log('👁 condition 3');
 			mainContent =
-			<div className='main'>
-				<Info/>
-				<Incoming session={this.state.session}/>
-			</div>;
+  <div className='main'>
+    <OperatorStatus/>
+    <Incoming session={this.state.session}/>
+  </div>;
 		} else {
 			console.log('👁 condition 4');
 			mainContent=<div>
-				<Info/>
-				<Session currentSession={this.state.session} currentUser= {this.state.user}/>
+  <Info/>
+  <Session currentSession={this.state.session} currentUser= {this.state.user}/>
 			</div>;
 		}
 		return(
-		  <div style={homeStyle}>
-		    <SideContent operator={this.state.operatorInfo}/>
-		    {mainContent}
-		    <style jsx >{`
+  <div style={homeStyle}>
+    <SideContent operator={this.state.operatorInfo}/>
+    {mainContent}
+    <style jsx >{`
 								.main {
 									display:flex;
 									flex-flow: column;
@@ -102,7 +103,7 @@ class Home extends React.Component{
 									padding: 40px;
 								}
 							`}</style>
-		  </div>
+  </div>
 		);
 	}
 }

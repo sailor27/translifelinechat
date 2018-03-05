@@ -31,23 +31,23 @@ The  purpose of this application is to provide a text-based mode of talking with
 
 ## Static Mock Up:
 Note: You could also open the attached sketch file "assets/sketch files/MVP mock.sketch" and view both pages if your computer has Sketch App installed.
-![alt text](assets/images/Chatter1.png)
+![alt text](src/assets/images/Chatter1.png)
 
-![alt text](assets/images/Chatter2.png)
+![alt text](src/assets/images/Chatter2.png)
 
-![alt text](assets/images/Operator1.png)
+![alt text](src/assets/images/Operator1.png)
 
-![alt text](assets/images/Operator2.png)
+![alt text](src/assets/images/Operator2.png)
 
 ## Static Mock Up with Components Labeled:
 Note: Lines around APP and Header were cut off when I exported from Sketch
-![alt text](assets/images/Chatter1L.png)
+![alt text](src/assets/images/Chatter1L.png)
 
-![alt text](assets/images/Chatter2L.png)
+![alt text](src/assets/images/Chatter2L.png)
 
-![alt text](assets/images/Operator1L.png)
+![alt text](src/assets/images/Operator1L.png)
 
-![alt text](assets/images/Operator2L.png)
+![alt text](src/assets/images/Operator2L.png)
 
 ### Built Using:
 
@@ -90,7 +90,7 @@ Future Enhancements Required Tools:
 **Sailor Winkelman** - [GitHub](https://github.com/sailor27) | [LinkedIn](https://www.linkedin.com/in/sailor-winkelman-62429152)
 
 ## Component Tree Visual
-![alt text](assets/images/ComponentTree.png)
+![alt text](src/assets/images/ComponentTree.png)
 
 ## Issues/Bugs 🐛
 **I am struggling with understanding how to build my component tree.**
