@@ -1,7 +1,6 @@
 import userReducer from './../../src/reducers/user-reducer';
 import {defaultState} from './../../src/defaultState';
 import types from './../../src/constants';
-// const { types } = constants;
 
 describe('userReducer', () => {
 

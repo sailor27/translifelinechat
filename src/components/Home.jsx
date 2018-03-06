@@ -6,6 +6,9 @@ import OperatorStatus from './OperatorStatus';
 import Incoming from './Incoming';
 import Session from './Session';
 import Notes from './Notes';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import types from './../constants';
 
 class Home extends React.Component{
 	constructor(props){
@@ -112,5 +115,9 @@ class Home extends React.Component{
 		);
 	}
 }
+
+Home.propTypes = {
+
+};
 
 export default Home;
