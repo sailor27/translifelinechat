@@ -1,6 +1,7 @@
 import React from 'react';
-
+import {defaultState} from'../defaultState';
 function HowTo() {
+	console.log(defaultState);
 	const howToChat = ['First, we’ll connect you to a chat operator.', ' If all our operators are busy, please wait and we will help you as soon as we can. You can also call our phone line: US: (877) 565-8860 CANADA: (877) 330-6366', 'A trans-identified volunteer will answer your chat. Type in the text box and press send to talk with the operator.', 'The operator will listen non-judgementally and help you get through what you’re going through. None of our operators will call emergency services without your consent and cooperation.'];
 
 	const howToStyle = {
