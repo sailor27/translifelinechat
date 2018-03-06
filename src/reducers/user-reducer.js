@@ -1,18 +1,13 @@
-import {defaultState} from '../defaultState';
 import types from './../constants';
+import {defaultState} from './../defaultState';
 
-export default (state = defaultState, action) => {
+export default (state = defaultState.user, action) => {
   let newState;
-
+  let newUser;
   switch (action.type) {
     case types.CONNECT_USER:
-    newState = Object.assign({}, state.user, {
-      user: {
-        id: 'anon-345342',
-        isOperator: false,
-        isConnected: true,
-      }
-    });
+    newUser = Object.assign({}, state.user, {isConnected: true});
+    newState = Object.assign({}, state, {user: newUser});
     return newState;
 
     default:

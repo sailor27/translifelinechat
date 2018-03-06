@@ -1,6 +1,7 @@
 import userReducer from './../../src/reducers/user-reducer';
 import {defaultState} from './../../src/defaultState';
 import types from './../../src/constants';
+// const { types } = constants;
 
 describe('userReducer', () => {
 
@@ -9,13 +10,9 @@ describe('userReducer', () => {
   });
 
   test('Should change state isConnected to equal true', () => {
-    expect(userReducer(defaultState.user, {type: types.CONNECT_USER})).toEqual({
-      user: {
-        id: 'anon-345342',
-        isOperator: false,
-        isConnected: true,
-      }
-    });
+    let testUser = Object.assign({}, defaultState.user, {isConnected: true});
+    let testState = Object.assign({}, defaultState, {user: testUser});
+    expect(userReducer(defaultState, {type: types.CONNECT_USER})).toEqual(testState);
   });
 
 });

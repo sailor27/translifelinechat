@@ -1,9 +1,21 @@
 import React from 'react';
-import {defaultState} from'../defaultState';
-function HowTo() {
-	console.log(defaultState);
-	const howToChat = ['First, we’ll connect you to a chat operator.', ' If all our operators are busy, please wait and we will help you as soon as we can. You can also call our phone line: US: (877) 565-8860 CANADA: (877) 330-6366', 'A trans-identified volunteer will answer your chat. Type in the text box and press send to talk with the operator.', 'The operator will listen non-judgementally and help you get through what you’re going through. None of our operators will call emergency services without your consent and cooperation.'];
+import { connect } from 'react-redux';
+import types from './../constants';
 
+function HowTo(props) {
+	console.log(props);
+
+	function handleConnectingUser(){
+		const { dispatch } = props;
+		const action = {
+			type: types.CONNECT_USER
+		};
+
+		dispatch(action);
+	}
+
+
+	const howToChat = ['First, we’ll connect you to a chat operator.', ' If all our operators are busy, please wait and we will help you as soon as we can. You can also call our phone line: US: (877) 565-8860 CANADA: (877) 330-6366', 'A trans-identified volunteer will answer your chat. Type in the text box and press send to talk with the operator.', 'The operator will listen non-judgementally and help you get through what you’re going through. None of our operators will call emergency services without your consent and cooperation.'];
 	const howToStyle = {
 		border: '3px solid #979797',
 		backgroundColor: '#F8F8F8',
@@ -15,6 +27,7 @@ function HowTo() {
 		marginTop: '90px',
 		minHeight: '500px'
 	};
+
 	return(
   <div style={howToStyle}>
     <h1 style={{fontFamily:'Nunito', fontWeight: 'bold'}}> How to Chat with Trans Lifeline</h1>
@@ -22,7 +35,7 @@ function HowTo() {
       {howToChat.map((step, index) =>
         <div key={index} className='list'><li style={{marginLeft: '5px'}}>{step}</li></div>)}
     </ol>
-    <button>Connect</button>
+    <button onClick={handleConnectingUser}>Connect</button>
 
     <style jsx> {`
 			ol{
@@ -49,4 +62,4 @@ function HowTo() {
 	);
 }
 
-export default HowTo;
+export default connect()(HowTo);
