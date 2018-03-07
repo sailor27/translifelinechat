@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import types from './../constants';
 
 function HowTo(props) {
-	console.log(props);
+
 
 	function handleConnectingUser(){
 		const { dispatch } = props;

@@ -8,52 +8,10 @@ import Session from './Session';
 import Notes from './Notes';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import types from './../constants';
+// import types from './../constants';
 
 class Home extends React.Component{
-	constructor(props){
-		super(props);
-			this.state={
-				user: {
-					id: 'anon-345342',
-					isOperator: false,
-					isConnected: false,
-				},
-				operatorInfo: {
-					id: 'operator-345342',
-					avatar: 'avatar.png',
-					name: 'Sailor',
-					location: 'Portland, OR',
-				},
-				session: {
-					id: 2,
-					timeRequested: 1520289765616,
-					timeStarted: 23423,
-					timeClosed: 23444,
-					operatorId: 'operator-345342',
-					messages: [
-						{
-							userId: 'anon-1233523',
-							message: 'hello',
-							timeStamp: 1
-						},{
-							userId: 'operator-345342',
-							message: 'hi there',
-							timeStamp: 2
-						},{
-							userId: 'anon-1233523',
-							message: 'how are you?',
-							timeStamp: 3
-						},{
-							userId: 'operator-345342',
-							message: 'im fine',
-							timeStamp: 4
-						}
-					],
-					notes: 'this is very productive. what a great person!'
-				}
-			};
-	}
+
 	render(){
 		const homeStyle = {
 				boxSizing: 'border-box',
@@ -67,40 +25,40 @@ class Home extends React.Component{
 
 		let mainContent;
 
-		if(!this.state.user.isConnected && !this.state.user.isOperator){
+		if(!this.props.user.isConnected && !this.props.user.isOperator){
 			console.log('👁 condition 1');
 			mainContent =
   <div>
     <Info/>
     <HowTo/>
   </div>;
-		} else if (this.state.user.isConnected && this.state.user.isOperator){
+		} else if (this.props.user.isConnected && this.props.user.isOperator){
 			console.log('👁 condition 2');
 			mainContent=
   <div>
     <Info/>
-    <Session currentSession={this.state.session} currentUser= {this.state.user}/>
-    <Notes id={this.state.session.id}/>
+    <Session currentSession={this.props.session} currentUser= {this.props.user}/>
+    <Notes id={this.props.session.id}/>
   </div>;
-		}else if (this.state.user.isOperator){
+}else if (this.props.user.isOperator){
 			console.log('👁 condition 3');
 			mainContent =
   <div className='main'>
     <OperatorStatus/>
-    <Incoming session={this.state.session}/>
+    <Incoming session={this.props.session}/>
   </div>;
 		} else {
 			console.log('👁 condition 4');
 			mainContent=
   <div>
     <Info/>
-    <Session currentSession={this.state.session} currentUser= {this.state.user}/>
+    <Session currentSession={this.props.session} currentUser= {this.props.user}/>
   </div>;
 
 		}
 		return(
   <div style={homeStyle}>
-    <SideContent user={this.state.user} operator={this.state.operatorInfo}/>
+    <SideContent user={this.props.user} operator={this.props.operatorInfo}/>
     {mainContent}
     <style jsx >{`
 								.main {
@@ -116,8 +74,19 @@ class Home extends React.Component{
 	}
 }
 
-Home.propTypes = {
+const mapStateToProps = state => {
 
+	return {
+		user: state.user,
+		operatorInfo: state.operatorInfo,
+		session: state.session
+	};
 };
 
-export default Home;
+Home.propTypes = {
+	user: PropTypes.object,
+	operatorInfo: PropTypes.object,
+	session: PropTypes.object
+};
+
+export default connect(mapStateToProps)(Home);
