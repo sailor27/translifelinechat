@@ -17,7 +17,6 @@ export const defaultState = {
     timeClosed: null,
     operatorId: null,
     messages: [
-
     ],
     notes: ''
   }

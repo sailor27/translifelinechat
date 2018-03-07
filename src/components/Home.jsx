@@ -8,7 +8,7 @@ import Session from './Session';
 import Notes from './Notes';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-// import types from './../constants';
+import {defaultState} from './../defaultState';
 
 class Home extends React.Component{
 
@@ -24,6 +24,7 @@ class Home extends React.Component{
 			};
 
 		let mainContent;
+		console.log(defaultState.operatorInfo);
 
 		if(!this.props.user.isConnected && !this.props.user.isOperator){
 			console.log('👁 condition 1');
