@@ -1,10 +1,11 @@
 import types from './../constants';
 import {defaultState} from './../defaultState';
 
-
 export default (state = defaultState, action) => {
   let newOperator;
   let newState;
+
+  // const {id, avatar, name, location} = action; how to replace action with different info?
 
   switch (action.type) {
     case types.ADD_OPERATOR:

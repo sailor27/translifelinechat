@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import OperatorInfo from './OperatorInfo';
 import ChatterInfo from './ChatterInfo';
+import OperatorButton from './OperatorButton';
 import OperatorForm from './OperatorForm';
 import ChatterForm from './ChatterForm';
 import ChatHistory from './ChatHistory';
@@ -25,6 +26,7 @@ function SideContent(props) {
 	if(!props.user.isConnected && !props.user.isOperator){
 		console.log('🔍 condition 1');
 		topBox = <ChatterForm/>;
+		bottomBox = <OperatorButton/>;
 	} else if (props.user.isConnected && props.user.isOperator){
 		console.log('🔍 condition 2');
 		topBox = <ChatterInfo/>;

@@ -10,7 +10,6 @@ function HowTo(props) {
 		const action = {
 			type: types.CONNECT_USER
 		};
-
 		dispatch(action);
 	}
 
