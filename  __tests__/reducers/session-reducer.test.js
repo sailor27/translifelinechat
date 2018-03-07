@@ -8,4 +8,14 @@ describe('sessionReducer', () => {
     expect(sessionReducer(defaultState, { type: null })).toEqual(defaultState);
   });
 
+  // test('Should add new message to message array', () => {
+  //   let testMessage = 'Hi, How Are You';
+  //   let lastPlace = (defaultState.session.messages.length - 1);
+  //
+  //   let testSession = Object.assign({}, defaultState.session.messages[lastPlace], {testMessage});
+  //
+  //   let testState = Object.assign({}, defaultState, {session:testSession});
+  //   expect(sessionReducer(defaultState, {type: types.ADD_MESSAGE})).toEqual(testState);
+  // });
+
 });
