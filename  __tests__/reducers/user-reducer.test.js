@@ -14,4 +14,10 @@ describe('userReducer', () => {
     expect(userReducer(defaultState, {type: types.CONNECT_USER})).toEqual(testState);
   });
 
+	test('Should change state isOperator to equal true', () => {
+		let testUser = Object.assign({}, defaultState.user, {isOperator: true});
+    let testState = Object.assign({}, defaultState, testUser);
+    expect(userReducer(defaultState, {type: types.SWITCH_USER})).toEqual(testState);
+	});
+
 });

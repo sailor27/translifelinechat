@@ -6,11 +6,14 @@ export default (state = defaultState.user, action) => {
   let newUser;
   switch (action.type) {
     case types.CONNECT_USER:
-
-    newUser = Object.assign({}, state.user, {isConnected: true});
-
-    newState = Object.assign({}, state,  newUser);
+	    newUser = Object.assign({}, state.user, {isConnected: true});
+	    newState = Object.assign({}, state,  newUser);
     return newState;
+		
+		case types.SWITCH_USER:
+			newUser = Object.assign({}, state.user, {isOperator: true});
+	    newState = Object.assign({}, state,  newUser);
+		return newState;
 
     default:
       return state;

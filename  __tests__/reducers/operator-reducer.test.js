@@ -9,7 +9,6 @@ describe('operatorReducer', () => {
   });
 
   test('Should add operator info and update state', () => {
-
     let testOperator = Object.assign({}, defaultState.operatorInfo, {id: 'operator-7', avatar: 'http://bit.ly/2FrnQOw', name: 'Milhouse', location: 'Springfield, OR'});
 
     let testState = Object.assign({}, defaultState, {operatorInfo: testOperator});
