@@ -15,7 +15,9 @@ function OperatorInfo(props){
 		width: '180px',
 		color: 'white',
 		borderRadius: '50%',
-		backgroundColor: '#5074AB',
+		backgroundImage: `url(${operator.avatar})`,
+		backgroundSize: 'cover',
+		backgroundRepeat: 'no-repeat',
 		padding: '20px',
 		display: 'flex',
 		justifyContent: 'center',
@@ -25,7 +27,6 @@ function OperatorInfo(props){
   <div style={operatorStyle}>
     <h3>Chatting with</h3>
     <div style={avatarStyle}>
-      <h2>{operator.avatar}</h2>
     </div>
     <div className="info">
       <p>{operator.name}</p>
