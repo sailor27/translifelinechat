@@ -19,7 +19,7 @@ class Home extends React.Component{
 				padding: '10px',
 				justifyContent: 'space-around',
 			};
-		console.log(this.props.user.user.isConnected);
+		console.log(this.props.user.isConnected);
 
 		let mainContent;
 		if(!this.props.user.isConnected && !this.props.user.isOperator){

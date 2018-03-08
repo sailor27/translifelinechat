@@ -1,7 +1,7 @@
 import types from './../constants';
 import {defaultState} from './../defaultState';
 
-export default (state = defaultState, action) => {
+export default (state = defaultState.operatorInfo, action) => {
   let newOperator;
   let newState;
 
