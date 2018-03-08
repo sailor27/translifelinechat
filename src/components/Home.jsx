@@ -7,7 +7,9 @@ import Incoming from './Incoming';
 import Session from './Session';
 import Notes from './Notes';
 import { connect } from 'react-redux';
+import types from './../constants';
 import PropTypes from 'prop-types';
+
 class Home extends React.Component{
 	render(){
 		const homeStyle = {
@@ -19,7 +21,16 @@ class Home extends React.Component{
 				padding: '10px',
 				justifyContent: 'space-around',
 			};
-		console.log(this.props.user.isConnected);
+
+		const { dispatch } = this.props;
+
+		function handleConnectingUser(){
+			console.log('time to change the state 🕒');
+			const action = {
+				type: types.CONNECT_USER
+			};
+			dispatch(action);
+		}
 
 		let mainContent;
 		if(!this.props.user.isConnected && !this.props.user.isOperator){
@@ -27,12 +38,11 @@ class Home extends React.Component{
 			mainContent =
   <div>
     <Info/>
-    <HowTo/>
+    <HowTo connectUser={handleConnectingUser}/>
   </div>;
 		} else if (this.props.user.isConnected && this.props.user.isOperator){
 			console.log('👁 condition 2');
-			mainContent=
-  <div>
+  mainContent=<div>
     <Info/>
     <Session currentSession={this.props.session} currentUser= {this.props.user}/>
     <Notes id={this.props.session.id}/>
@@ -42,7 +52,10 @@ class Home extends React.Component{
 			mainContent =
   <div className='main'>
     <OperatorStatus/>
-    <Incoming session={this.props.session}/>
+    <Incoming
+      session={this.props.session}
+      connectUser={handleConnectingUser}
+		/>
   </div>;
 		} else {
 			console.log('👁 condition 4');

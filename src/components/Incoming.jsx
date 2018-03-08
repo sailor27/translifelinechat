@@ -29,16 +29,7 @@ function Incoming(props){
 		justifyContent: 'center',
 		alignItems: 'center'
 	};
-	console.log(props);
 
-	function handleConnectingUser(){
-		console.log('time to change the state 🕒');
-		const { dispatch } = props;
-		const action = {
-			type: types.CONNECT_USER
-		};
-		dispatch(action);
-	}
 	let waitTime = moment(props.session.timeRequested).startOf('hour').fromNow();
 
 	return(
@@ -49,7 +40,7 @@ function Incoming(props){
       <div className='col'>
         <p>#{props.session.id}</p>
         <p>Requested: {waitTime}</p>
-        <button onClick={handleConnectingUser}>Connect</button>
+        <button onClick={props.connectUser}>Connect</button>
       </div>
       <div className='col'>
         <p>Chatter Name</p>
@@ -82,6 +73,7 @@ function Incoming(props){
 }
 
 Incoming.propTypes = {
-	session: PropTypes.object
+	session: PropTypes.object,
+	connectUser: PropTypes.func
 };
 export default connect()(Incoming);

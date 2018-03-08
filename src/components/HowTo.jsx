@@ -1,17 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import types from './../constants';
+import PropTypes from 'prop-types';
 
 function HowTo(props) {
-
-	function handleConnectingUser(){
-		console.log('time to change the state 🕒');
-		const { dispatch } = props;
-		const action = {
-			type: types.CONNECT_USER
-		};
-		dispatch(action);
-	}
 
 	const howToChat = ['First, we’ll connect you to a chat operator.', ' If all our operators are busy, please wait and we will help you as soon as we can. You can also call our phone line: US: (877) 565-8860 CANADA: (877) 330-6366', 'A trans-identified volunteer will answer your chat. Type in the text box and press send to talk with the operator.', 'The operator will listen non-judgementally and help you get through what you’re going through. None of our operators will call emergency services without your consent and cooperation.'];
 	const howToStyle = {
@@ -33,7 +23,7 @@ function HowTo(props) {
       {howToChat.map((step, index) =>
         <div key={index} className='list'><li style={{marginLeft: '5px'}}>{step}</li></div>)}
     </ol>
-    <button onClick={handleConnectingUser}>Connect</button>
+    <button onClick={props.connectUser}>Connect</button>
 
     <style jsx> {`
 			ol{
@@ -60,4 +50,7 @@ function HowTo(props) {
 	);
 }
 
-export default connect()(HowTo);
+HowTo.propTypes = {
+	connectUser: PropTypes.func
+};
+export default HowTo;
