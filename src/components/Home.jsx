@@ -39,7 +39,8 @@ class Home extends React.Component{
 			};
 			dispatch(action);
 		}
-		function handleAddingMessage(){
+		function handleAddingMessage(e){
+			e.preventDefault();
 			console.log('time to change the state ⏲');
 			const action = {
 				type: types.ADD_MESSAGE

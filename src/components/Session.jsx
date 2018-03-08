@@ -24,6 +24,8 @@ function Session(props){
 	let user = props.currentUser;
 	let messages = props.currentSession.messages;
 	let time;
+
+	console.log(props.currentSession.messages);
 	return(
   <div style={sessionStyle}>
     <div style={convoAreaStyle}>
@@ -52,7 +54,7 @@ function Session(props){
 				}
 				input {
 					width: 100%;
-					font-size: 1.25em;
+					font-size: 1em;
 					line-height: 2em;
 					padding-left: 10px;
 					cursor: pointer;

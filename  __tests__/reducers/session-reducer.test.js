@@ -9,7 +9,11 @@ describe('sessionReducer', () => {
   });
 
   test('Should add new message to message array', () => {
-    let testMessage = 'Hi, How Are You';
+    let testMessage = {
+      timeStamp: 1520535520200,
+      isOp: false,
+      string: 'Hi'
+    };
 
     let testMessages = defaultState.session.messages.slice();
     testMessages.push(testMessage);

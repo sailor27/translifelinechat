@@ -7,7 +7,11 @@ let newState;
 export default (state = defaultState.session, action) => {
   switch (action.type) {
     case types.ADD_MESSAGE:
-      newMessage = 'Hi, How Are You';
+      newMessage = {
+        timeStamp: 1520535520200,
+        isOp: false,
+        string: 'Hi'
+      };
 
       newMessages = state.messages.slice();
 
