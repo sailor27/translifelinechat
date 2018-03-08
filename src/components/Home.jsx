@@ -12,6 +12,7 @@ import PropTypes from 'prop-types';
 
 class Home extends React.Component{
 	render(){
+		console.log(this.props.session);
 		const homeStyle = {
 				boxSizing: 'border-box',
 				marginTop: '90px',

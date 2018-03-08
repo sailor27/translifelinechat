@@ -24,8 +24,7 @@ function Session(props){
 	let user = props.currentUser;
 	let messages = props.currentSession.messages;
 	let time;
-
-	console.log(props.currentSession.messages);
+	
 	return(
   <div style={sessionStyle}>
     <div style={convoAreaStyle}>

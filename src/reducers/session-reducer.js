@@ -1,6 +1,7 @@
 import types from './../constants';
 import {defaultState} from './../defaultState';
 let newMessage;
+let messages;
 let newMessages;
 let newState;
 
@@ -13,11 +14,13 @@ export default (state = defaultState.session, action) => {
         string: 'Hi'
       };
 
-      newMessages = state.messages.slice();
+      messages = state.messages.slice();
+      messages.push(newMessage);
 
-      newMessages.push(newMessage);
+      newState = Object.assign({}, state, {
+        messages: messages
+      });
 
-      newState = Object.assign({}, state.messages, newMessages);
       return newState;
 
     default:
