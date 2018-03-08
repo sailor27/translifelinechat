@@ -39,6 +39,13 @@ class Home extends React.Component{
 			};
 			dispatch(action);
 		}
+		function handleAddingMessage(){
+			console.log('time to change the state ⏲');
+			const action = {
+				type: types.ADD_MESSAGE
+			};
+			dispatch(action);
+		}
 
 		let mainContent;
 		if(!this.props.user.isConnected && !this.props.user.isOperator){
@@ -70,7 +77,7 @@ class Home extends React.Component{
 			mainContent=
   <div>
     <Info/>
-    <Session currentSession={this.props.session} currentUser= {this.props.user}/>
+    <Session currentSession={this.props.session} currentUser= {this.props.user} addMessage={handleAddingMessage}/>
   </div>;
 
 		}

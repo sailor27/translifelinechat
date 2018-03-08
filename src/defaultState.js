@@ -17,6 +17,11 @@ export const defaultState = {
     timeClosed: null,
     operatorId: null,
     messages: [
+      {
+        timeStamp: Date.now(),
+        isOp: false,
+        string: 'this is a message'
+      }
     ],
     notes: ''
   }

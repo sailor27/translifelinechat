@@ -17,17 +17,18 @@ function Session(props){
 	};
 	let user = props.currentUser;
 	let messages = props.currentSession.messages;
+	let time;
 	return(
   <div style={sessionStyle}>
     <ul>
       {messages.map((message, i) =>
-        <Message message={messages[i].message}
-          time={messages[i].timeStamp}
-          user={messages[i].userId}
+        <Message string={messages[i].string}
+          time = {messages[i].timeStamp}
+          isOp={messages[i].isOp}
           key={messages[i].timeStamp} />
 			)}
     </ul>
-    <form>
+    <form onSubmit={props.addMessage}>
       <input
         type='text'
         id='name'
@@ -66,7 +67,8 @@ function Session(props){
 
 Session.propTypes = {
 	currentSession: PropTypes.object,
-	currentUser: PropTypes.object
+	currentUser: PropTypes.object,
+	addMessage: PropTypes.func
 };
 
 export default Session;

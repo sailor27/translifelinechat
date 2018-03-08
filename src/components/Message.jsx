@@ -2,20 +2,35 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Message(props){
-	const messageStyle = {
-		width: '50%',
-		backgroundColor: '#5074AB',
-		borderRadius: '15px',
-		padding: '12px',
-		position: 'relative',
-		color: 'white',
-		textAlign: 'left'
-	};
+
+	let messageStyle;
+	if (!props.isOp){
+		messageStyle = {
+			width: '50%',
+			borderRadius: '15px',
+			padding: '12px',
+			position: 'relative',
+			color: 'white',
+			backgroundColor: '#5074AB',
+			textAlign: 'left'
+		};
+	} else {
+		messageStyle = {
+			backgroundColor: '#E27995',
+			width: '50%',
+			borderRadius: '15px',
+			padding: '12px',
+			position: 'relative',
+			color: 'white',
+			textAlign: 'left'
+		};
+	}
+
 	return(
   <div style={{margin: '30px'}}>
     <div style={messageStyle}>
-      <li>{props.message}</li>
-      {/* <div className='tri'></div> */}
+      <li>{props.string}</li>
+      <div className='tri'></div>
       <style jsx>
         {`
 				li {
@@ -39,8 +54,8 @@ function Message(props){
 }
 
 Message.propTypes = {
-	message: PropTypes.string,
+	string: PropTypes.string,
 	time: PropTypes.number,
-	user: PropTypes.string
+	isOp: PropTypes.bool
 };
 export default Message;
