@@ -10,7 +10,8 @@ describe('sessionReducer', () => {
 
   // test('Should add new message to message array', () => {
   //   let testMessage = 'Hi, How Are You';
-  //   let lastPlace = (defaultState.session.messages.length - 1);
+  //
+  //   let testMessages = defaultState.session.messages.slice();
   //
   //   let testSession = Object.assign({}, defaultState.session.messages[lastPlace], {testMessage});
   //
