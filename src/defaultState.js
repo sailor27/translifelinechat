@@ -18,8 +18,13 @@ export const defaultState = {
     operatorId: null,
     messages: [
       {
-        timeStamp: Date.now(),
+        timeStamp: 1520535520208,
         isOp: false,
+        string: 'this is a message'
+      },
+      {
+        timeStamp: Date.now(),
+        isOp: true,
         string: 'this is a message'
       }
     ],

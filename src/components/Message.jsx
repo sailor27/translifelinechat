@@ -4,9 +4,11 @@ import PropTypes from 'prop-types';
 function Message(props){
 
 	let messageStyle;
+	let messageAreaStyle;
+
 	if (!props.isOp){
 		messageStyle = {
-			width: '50%',
+			maxWidth: '50%',
 			borderRadius: '15px',
 			padding: '12px',
 			position: 'relative',
@@ -14,23 +16,35 @@ function Message(props){
 			backgroundColor: '#5074AB',
 			textAlign: 'left'
 		};
+		messageAreaStyle ={
+			margin: '20px',
+			display:'flex',
+			flexFlow: 'column nowrap',
+			alignItems: 'flex-end'
+		};
 	} else {
 		messageStyle = {
 			backgroundColor: '#E27995',
-			width: '50%',
+			maxWidth: '50%',
 			borderRadius: '15px',
 			padding: '12px',
 			position: 'relative',
 			color: 'white',
 			textAlign: 'left'
 		};
+		messageAreaStyle ={
+			margin: '20px',
+			display:'flex',
+			flexFlow: 'column nowrap',
+			alignItems: 'flex-start'
+		};
 	}
 
 	return(
-  <div style={{margin: '30px'}}>
+  <div style={messageAreaStyle}>
     <div style={messageStyle}>
       <li>{props.string}</li>
-      <div className='tri'></div>
+      {/*<div className='tri'></div>*/}
       <style jsx>
         {`
 				li {
@@ -48,7 +62,7 @@ function Message(props){
 			`}
       </style>
     </div>
-    <p style={{float: 'left', margin: '0px', color: '#979797', fontSize: '0.8em'}}>{props.time}</p>
+    <p style={{textAlign: 'left', margin: '0px', color: '#979797', fontSize: '0.8em'}}>{props.time}</p>
   </div>
 	);
 }
