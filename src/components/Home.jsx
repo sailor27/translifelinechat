@@ -30,6 +30,14 @@ class Home extends React.Component{
 				type: types.CONNECT_USER
 			};
 			dispatch(action);
+			handleAddingOperator();
+		}
+		function handleAddingOperator(){
+			console.log('time to change the state ⌚️');
+			const action = {
+				type: types.ADD_OPERATOR
+			};
+			dispatch(action);
 		}
 
 		let mainContent;

@@ -4,8 +4,7 @@ import types from './../constants';
 
 function OperatorButton(props) {
 
-// refactor to fire on OperatorForm Submit
-  function handleAddingOperator(){
+  function handleSwitchingUser(){
 		console.log('time to change the state ⌚️');
     const { dispatch } = props;
     const action = {
@@ -17,7 +16,7 @@ function OperatorButton(props) {
 return(
   <div style={{marginTop: '100px'}}>
     <p style={{display:'inline'}}>Volunteer Operators: </p>
-    <button onClick={handleAddingOperator} className='lilb' >go!</button>
+    <button onClick={handleSwitchingUser} className='lilb' >go!</button>
   </div>
 	);
 }

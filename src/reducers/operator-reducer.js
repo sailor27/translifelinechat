@@ -10,7 +10,7 @@ export default (state = defaultState.operatorInfo, action) => {
 
       newOperator = Object.assign({}, state.operatorInfo, {id: 'operator-7', avatar: 'http://bit.ly/2FrnQOw', name: 'Milhouse', location: 'Springfield, OR'});
 
-      newState = Object.assign({}, state, {operatorInfo: newOperator});
+      newState = Object.assign({}, state, newOperator);
       return newState;
 
     default:

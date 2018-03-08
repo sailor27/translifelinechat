@@ -51,6 +51,6 @@ function HowTo(props) {
 }
 
 HowTo.propTypes = {
-	connectUser: PropTypes.func
+	connectUser: PropTypes.func,
 };
 export default HowTo;
