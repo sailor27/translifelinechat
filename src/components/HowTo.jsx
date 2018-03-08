@@ -6,6 +6,7 @@ function HowTo(props) {
 
 
 	function handleConnectingUser(){
+		console.log('time to change the state 🕒');
 		const { dispatch } = props;
 		const action = {
 			type: types.CONNECT_USER

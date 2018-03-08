@@ -8,10 +8,7 @@ import Session from './Session';
 import Notes from './Notes';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import {defaultState} from './../defaultState';
-
 class Home extends React.Component{
-
 	render(){
 		const homeStyle = {
 				boxSizing: 'border-box',
@@ -22,10 +19,9 @@ class Home extends React.Component{
 				padding: '10px',
 				justifyContent: 'space-around',
 			};
+		console.log(this.props.user.user.isConnected);
 
 		let mainContent;
-		console.log(defaultState.operatorInfo);
-
 		if(!this.props.user.isConnected && !this.props.user.isOperator){
 			console.log('👁 condition 1');
 			mainContent =
@@ -41,7 +37,7 @@ class Home extends React.Component{
     <Session currentSession={this.props.session} currentUser= {this.props.user}/>
     <Notes id={this.props.session.id}/>
   </div>;
-}else if (this.props.user.isOperator){
+} else if (this.props.user.isOperator){
 			console.log('👁 condition 3');
 			mainContent =
   <div className='main'>
@@ -76,7 +72,6 @@ class Home extends React.Component{
 }
 
 const mapStateToProps = state => {
-
 	return {
 		user: state.user,
 		operatorInfo: state.operatorInfo,
