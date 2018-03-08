@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import types from './../constants';
 import moment from 'moment';
+
 function Incoming(props){
 	const incomingStyle = {
 		border: '3px solid #979797',
@@ -26,9 +29,18 @@ function Incoming(props){
 		justifyContent: 'center',
 		alignItems: 'center'
 	};
+	console.log(props);
 
-
+	function handleConnectingUser(){
+		console.log('time to change the state 🕒');
+		const { dispatch } = props;
+		const action = {
+			type: types.CONNECT_USER
+		};
+		dispatch(action);
+	}
 	let waitTime = moment(props.session.timeRequested).startOf('hour').fromNow();
+
 	return(
   <div style={incomingStyle}>
     <h1>Incoming Sessions</h1>
@@ -37,7 +49,7 @@ function Incoming(props){
       <div className='col'>
         <p>#{props.session.id}</p>
         <p>Requested: {waitTime}</p>
-        <button>Connect</button>
+        <button onClick={handleConnectingUser}>Connect</button>
       </div>
       <div className='col'>
         <p>Chatter Name</p>
@@ -72,4 +84,4 @@ function Incoming(props){
 Incoming.propTypes = {
 	session: PropTypes.object
 };
-export default Incoming;
+export default connect()(Incoming);

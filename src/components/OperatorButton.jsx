@@ -9,7 +9,7 @@ function OperatorButton(props) {
 		console.log('time to change the state ⌚️');
     const { dispatch } = props;
     const action = {
-      type: types.ADD_OPERATOR
+      type: types.SWITCH_USER
     };
     dispatch(action);
   }

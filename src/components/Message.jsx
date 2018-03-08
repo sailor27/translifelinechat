@@ -18,18 +18,18 @@ function Message(props){
       {/* <div className='tri'></div> */}
       <style jsx>
         {`
-			li {
-				list-style:none;
-			}
-			.tri {
-				position: absolute;
-				width: 0;
-				height: 0;
-				top: 40px;
-				left: 490px;
-				border-top: 18px solid var(--blue);
-				border-left: 18px solid transparent;
-			}
+				li {
+					list-style:none;
+				}
+				.tri {
+					position: absolute;
+					width: 0;
+					height: 0;
+					top: 40px;
+					left: 490px;
+					border-top: 18px solid var(--blue);
+					border-left: 18px solid transparent;
+				}
 			`}
       </style>
     </div>
