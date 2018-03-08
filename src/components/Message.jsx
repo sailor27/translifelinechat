@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 function Message(props){
 
@@ -62,7 +63,7 @@ function Message(props){
 			`}
       </style>
     </div>
-    <p style={{textAlign: 'left', margin: '0px', color: '#979797', fontSize: '0.8em'}}>{props.time}</p>
+    <p style={{textAlign: 'left', margin: '0px', color: '#979797', fontSize: '0.7em'}}>{moment(props.time).format('MMMM Do, h:mm a')}</p>
   </div>
 	);
 }
