@@ -12,10 +12,8 @@ describe('sessionReducer', () => {
   //   let testMessage = 'Hi, How Are You';
   //
   //   let testMessages = defaultState.session.messages.slice();
-  //
-  //   let testSession = Object.assign({}, defaultState.session.messages[lastPlace], {testMessage});
-  //
-  //   let testState = Object.assign({}, defaultState, {session:testSession});
+  //   testMessages.push(testMessage);
+  //   let testState = Object.assign({}, defaultState, {session.messages:testMessages});
   //   expect(sessionReducer(defaultState, {type: types.ADD_MESSAGE})).toEqual(testState);
   // });
 
