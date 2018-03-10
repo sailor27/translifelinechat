@@ -5,10 +5,10 @@ export const defaultState = {
     isConnected: false,
   },
   operatorInfo: {
-    id: null,
-    avatar: null,
-    name: null,
-    location: null,
+    id: 'operator-7',
+		avatar: 'http://bit.ly/2FrnQOw',
+		name: 'Milhouse', 
+		location: 'Springfield, OR'
   },
   session: {
     id: null,

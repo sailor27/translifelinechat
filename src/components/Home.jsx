@@ -12,7 +12,6 @@ import PropTypes from 'prop-types';
 
 class Home extends React.Component{
 	render(){
-		console.log(this.props.session);
 		const homeStyle = {
 				boxSizing: 'border-box',
 				marginTop: '90px',
@@ -24,8 +23,6 @@ class Home extends React.Component{
 			};
 
 		const { dispatch } = this.props;
-		let _string = null;
-
 
 		function handleConnectingUser(){
 			console.log('time to change the state 🕒');

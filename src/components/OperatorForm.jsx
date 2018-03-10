@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function OperatorForm(props){
-
+	console.log(props);
   const operatorFormStyle={
     maxWidth: '350px'
   };
@@ -15,41 +15,51 @@ function OperatorForm(props){
     padding: '20px',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+		flexFlow: 'column nowrap'
   };
   return(
-    <div style={operatorFormStyle}>
+    <div>
       <h2>Operator Info</h2>
       <div className='sCard'>
-
-        <div style={avatarStyle}>
-          <form>
+        <form>
+          <div style={avatarStyle}>
             <input
               type='text'
               id='avatar'
               placeholder={props.operator.avatar}
-              />
-            <button className='lilb'>add</button>
-          </form>
-        </div>
-        <form>
-          <input
-            type='text'
-            id='name'
-            placeholder={props.operator.name}
-            />
-          <button className='lilb'>add</button>
+						/>
+            <label>avatar url</label>
+          </div>
+          <div>
+            <label>name</label>
+            <input
+              type='text'
+              id='name'
+              placeholder={props.operator.name}
+						/>
+          </div>
+          <div>
+            <label>location</label>
+            <input
+              type='text'
+              id='location'
+              placeholder={props.operator.location}
+						/>
+          </div>
+          <h3>id: {props.operator.id}</h3>
+          <button className='lilb'>Update</button>
         </form>
-        <form>
-          <input
-            type='text'
-            id='location'
-            placeholder={props.operator.location}
-            />
-          <button className='lilb'>add</button>
-        </form>
-        <h3>id: {props.operator.id}</h3>
       </div>
+      <style jsx>{`
+				form {
+					display: flex;
+					flex-flow: column nowrap;
+					align-items: center;
+				}
+			`}
+
+      </style>
 
     </div>
   );
