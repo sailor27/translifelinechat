@@ -2,16 +2,16 @@ import types from './../constants';
 import {defaultState} from './../defaultState';
 let newMessage;
 let messages;
-let newMessages;
 let newState;
 
 export default (state = defaultState.session, action) => {
+	const { timeStamp, isOp, string} = action;
   switch (action.type) {
     case types.ADD_MESSAGE:
       newMessage = {
-        timeStamp: 1520535520200,
-        isOp: false,
-        string: 'Hi'
+        timeStamp: timeStamp,
+        isOp: isOp,
+        string: string
       };
 
       messages = state.messages.slice();

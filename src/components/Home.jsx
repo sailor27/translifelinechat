@@ -24,6 +24,8 @@ class Home extends React.Component{
 			};
 
 		const { dispatch } = this.props;
+		let _string = null;
+
 
 		function handleConnectingUser(){
 			console.log('time to change the state 🕒');
@@ -37,14 +39,6 @@ class Home extends React.Component{
 			console.log('time to change the state ⌚️');
 			const action = {
 				type: types.ADD_OPERATOR
-			};
-			dispatch(action);
-		}
-		function handleAddingMessage(e){
-			e.preventDefault();
-			console.log('time to change the state ⏲');
-			const action = {
-				type: types.ADD_MESSAGE
 			};
 			dispatch(action);
 		}
@@ -79,7 +73,7 @@ class Home extends React.Component{
 			mainContent=
   <div>
     <Info/>
-    <Session currentSession={this.props.session} currentUser= {this.props.user} addMessage={handleAddingMessage}/>
+    <Session currentSession={this.props.session} currentUser= {this.props.user}/>
   </div>;
 
 		}

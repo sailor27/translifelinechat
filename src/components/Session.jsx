@@ -1,6 +1,8 @@
 import React from 'react';
 import Message from './Message';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import types from './../constants';
 
 function Session(props){
 	const sessionStyle = {
@@ -24,7 +26,22 @@ function Session(props){
 	let user = props.currentUser;
 	let messages = props.currentSession.messages;
 	let time;
-	
+	let _string = null;
+
+	function handleAddingMessage(e){
+		e.preventDefault();
+		console.log('time to change the state ⏲');
+		const { dispatch } = props;
+		const action = {
+			type: types.ADD_MESSAGE,
+			timeStamp: Date.now(),
+			isOp: props.currentUser.isOperator,
+			string: _string.value
+		};
+		dispatch(action);
+		_string.value = '';
+	}
+
 	return(
   <div style={sessionStyle}>
     <div style={convoAreaStyle}>
@@ -37,12 +54,12 @@ function Session(props){
 					)}
       </ul>
     </div>
-    <form onSubmit={props.addMessage}>
+    <form onSubmit={handleAddingMessage}>
       <input
         type='text'
         id='name'
         placeholder= 'Type your message here [Press Enter to Send]'
-        ref={(input) => {}}/>
+        ref={(input) => {_string = input;}}/>
       <button type='submit'>SEND</button>
     </form>
     <style jsx>{`
@@ -78,7 +95,6 @@ function Session(props){
 Session.propTypes = {
 	currentSession: PropTypes.object,
 	currentUser: PropTypes.object,
-	addMessage: PropTypes.func
 };
 
-export default Session;
+export default connect()(Session);
