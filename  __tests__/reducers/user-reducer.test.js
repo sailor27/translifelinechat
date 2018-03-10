@@ -20,4 +20,10 @@ describe('userReducer', () => {
     expect(userReducer(defaultState, {type: types.SWITCH_USER})).toEqual(testState);
 	});
 
+	test('Should change state isConnected to equal false', () => {
+		let testUser = Object.assign({}, defaultState.user, {isConnected: false});
+		let testState = Object.assign({}, defaultState, testUser);
+    expect(userReducer(defaultState, {type: types.DISCONNECT_USER})).toEqual(testState);
+	});
+
 });

@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function ChatterInfo(){
-
+function ChatterInfo(props){
 let name = 'Jamie';
 let location = 'Butte, MT';
 
@@ -32,7 +32,7 @@ let location = 'Butte, MT';
       <p>{name}</p>
       <p>{location}</p>
       <p>Connected Now</p>
-      <button>END CHAT</button>
+      <button onClick={props.disconnect}>END CHAT</button>
     </div>
     <style jsx>
       {`
@@ -55,5 +55,7 @@ let location = 'Butte, MT';
   </div>
 	);
 }
-
+ChatterInfo.propTypes = {
+	disconnect: PropTypes.func
+};
 export default ChatterInfo;

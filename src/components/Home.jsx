@@ -30,7 +30,6 @@ class Home extends React.Component{
 				type: types.CONNECT_USER
 			};
 			dispatch(action);
-			handleAddingOperator();
 		}
 
 		let mainContent;

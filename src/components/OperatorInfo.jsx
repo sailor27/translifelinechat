@@ -10,6 +10,7 @@ function OperatorInfo(props){
 		alignItems: 'center',
 		padding: '30px 0px 30px 0px',
 	};
+	
 	const avatarStyle = {
 		height: '180px',
 		width: '180px',
@@ -32,7 +33,7 @@ function OperatorInfo(props){
       <p>{operator.name}</p>
       <p>{operator.location}</p>
       <p>Connected Now</p>
-      <button>END CHAT</button>
+      <button onClick={props.disconnect}>END CHAT</button>
     </div>
     <style jsx>
       {`
@@ -57,7 +58,8 @@ function OperatorInfo(props){
 }
 
 OperatorInfo.propTypes = {
-	operator: PropTypes.object
+	operator: PropTypes.object,
+	disconnect: PropTypes.func
 };
 
 export default OperatorInfo;
