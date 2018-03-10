@@ -18,7 +18,7 @@ describe('sessionReducer', () => {
     let testMessages = defaultState.session.messages.slice();
     testMessages.push(testMessage);
 
-    let testState = Object.assign({}, defaultState.session.messages, testMessages);
+    let testState = Object.assign({}, defaultState.session, {messages:testMessages});
     expect(sessionReducer(defaultState.session, {type: types.ADD_MESSAGE})).toEqual(testState);
   });
 
