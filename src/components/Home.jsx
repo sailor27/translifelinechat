@@ -32,13 +32,6 @@ class Home extends React.Component{
 			dispatch(action);
 			handleAddingOperator();
 		}
-		function handleAddingOperator(){
-			console.log('time to change the state ⌚️');
-			const action = {
-				type: types.ADD_OPERATOR
-			};
-			dispatch(action);
-		}
 
 		let mainContent;
 		if(!this.props.user.isConnected && !this.props.user.isOperator){

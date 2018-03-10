@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import types from './../constants';
 
 function OperatorForm(props){
 	console.log(props);
@@ -18,16 +20,36 @@ function OperatorForm(props){
     alignItems: 'center',
 		flexFlow: 'column nowrap'
   };
+	let _avatar = null;
+	let _name = null;
+	let _location = null;
+
+	function handleAddingOperator(){
+		console.log('time to change the state ⌚️');
+		const { dispatch } = props;
+		const action = {
+			type: types.ADD_OPERATOR,
+			avatar: _avatar.value,
+			id: 'operator_q',
+			name: _name.value,
+			location: _location.value
+		};
+		dispatch(action);
+		_avatar.value = '';
+		_name.value = '';
+		_location.value = '';
+	}
   return(
     <div>
       <h2>Operator Info</h2>
       <div className='sCard'>
-        <form>
+        <form onSubmit={handleAddingOperator}>
           <div style={avatarStyle}>
             <input
               type='text'
               id='avatar'
               placeholder={props.operator.avatar}
+              ref={(input) => {_avatar = input;}}
 						/>
             <label>avatar url</label>
           </div>
@@ -37,6 +59,7 @@ function OperatorForm(props){
               type='text'
               id='name'
               placeholder={props.operator.name}
+              ref={(input) => {_name = input;}}
 						/>
           </div>
           <div>
@@ -45,6 +68,7 @@ function OperatorForm(props){
               type='text'
               id='location'
               placeholder={props.operator.location}
+              ref={(input) => {_location = input;}}
 						/>
           </div>
           <h3>id: {props.operator.id}</h3>
@@ -68,4 +92,4 @@ function OperatorForm(props){
 OperatorForm.propTypes = {
   operator: PropTypes.object
 };
-export default OperatorForm;
+export default connect()(OperatorForm);

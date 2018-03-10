@@ -4,11 +4,12 @@ import {defaultState} from './../defaultState';
 export default (state = defaultState.operatorInfo, action) => {
   let newOperator;
   let newState;
+	const { id, avatar, name, location} = action;
 
   switch (action.type) {
     case types.ADD_OPERATOR:
 
-      newOperator = Object.assign({}, state.operatorInfo, {id: 'operator-7', avatar: 'http://bit.ly/2FrnQOw', name: 'Milhouse', location: 'Springfield, OR'});
+      newOperator = Object.assign({}, state.operatorInfo, {id: id, avatar: avatar, name: name, location: location});
 
       newState = Object.assign({}, state, newOperator);
       return newState;
