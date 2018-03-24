@@ -14,7 +14,7 @@ export default (state = defaultState.user, action) => {
 	    newUser = Object.assign({}, state.user, {isConnected: false});
 	    newState = Object.assign({}, state,  newUser);
     return newState;
-		
+
 		case types.SWITCH_USER:
 			newUser = Object.assign({}, state.user, {isOperator: true});
 	    newState = Object.assign({}, state,  newUser);

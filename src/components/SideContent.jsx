@@ -32,6 +32,7 @@ function SideContent(props) {
 			type: types.DISCONNECT_USER
 		};
 		dispatch(action);
+		console.log(props);
 	}
 
 	if(!props.user.isConnected && !props.user.isOperator){

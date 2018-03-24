@@ -9,7 +9,7 @@ describe('operatorReducer', () => {
   });
 
   test('Should add operator info and update state', () => {
-    let testOperator = Object.assign({}, defaultState.operatorInfo, {id: 'operator-7', avatar: 'http://bit.ly/2FrnQOw', name: 'Milhouse', location: 'Springfield, OR'});
+    let testOperator = Object.assign({}, defaultState.operatorInfo, {id: undefined, avatar: undefined, name: undefined, location: undefined});
 
     let testState = Object.assign({}, defaultState, testOperator);
     expect(operatorReducer(defaultState, {type: types.ADD_OPERATOR})).toEqual(testState);

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import types from './../constants';
 
 function ChatterForm(props){
-	console.log(props);
   const chatterFormStyle={
     maxWidth: '350px'
   };

@@ -26,4 +26,5 @@ describe('userReducer', () => {
     expect(userReducer(defaultState, {type: types.DISCONNECT_USER})).toEqual(testState);
 	});
 
+
 });
