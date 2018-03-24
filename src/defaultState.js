@@ -7,9 +7,14 @@ export const defaultState = {
   operatorInfo: {
     id: 'operator-7',
 		avatar: 'http://bit.ly/2FrnQOw',
-		name: 'Milhouse', 
+		name: 'Milhouse',
 		location: 'Springfield, OR'
   },
+	chatterInfo: {
+		avatar: undefined,
+		name: undefined,
+		location: undefined
+	},
   session: {
     id: null,
     timeRequested: null,

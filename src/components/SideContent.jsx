@@ -34,7 +34,6 @@ function SideContent(props) {
 		dispatch(action);
 	}
 
-
 	if(!props.user.isConnected && !props.user.isOperator){
 		console.log('🔍 condition 1');
 		topBox = <ChatterForm/>;
@@ -42,7 +41,8 @@ function SideContent(props) {
 	} else if (props.user.isConnected && props.user.isOperator){
 		console.log('🔍 condition 2');
 		topBox = <ChatterInfo
-  	disconnect={handleDisconnectingUser}/>;
+  	disconnect={handleDisconnectingUser}
+  	chatter={props.chatter}/>;
 		bottomBox = <ChatHistory/>;
 	} else if (props.user.isOperator){
 		console.log('🔍 condition 3');
@@ -66,7 +66,8 @@ function SideContent(props) {
 
 SideContent.propTypes = {
 	operator: PropTypes.object,
-	user: PropTypes.object
+	user: PropTypes.object,
+	chatter: PropTypes.object
 };
 
 export default connect()(SideContent);

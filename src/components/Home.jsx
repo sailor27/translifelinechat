@@ -68,7 +68,8 @@ class Home extends React.Component{
 		}
 		return(
   <div style={homeStyle}>
-    <SideContent user={this.props.user} operator={this.props.operatorInfo}/>
+    <SideContent user={this.props.user} operator={this.props.operatorInfo}
+      chatter={this.props.chatterInfo}/>
     {mainContent}
     <style jsx >{`
 								.main {
@@ -88,6 +89,7 @@ const mapStateToProps = state => {
 	return {
 		user: state.user,
 		operatorInfo: state.operatorInfo,
+		chatterInfo: state.chatterInfo,
 		session: state.session
 	};
 };
@@ -95,6 +97,7 @@ const mapStateToProps = state => {
 Home.propTypes = {
 	user: PropTypes.object,
 	operatorInfo: PropTypes.object,
+	chatterInfo: PropTypes.object,
 	session: PropTypes.object
 };
 

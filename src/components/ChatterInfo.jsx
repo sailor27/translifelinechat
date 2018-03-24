@@ -2,9 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function ChatterInfo(props){
-let name = 'Jamie';
-let location = 'Butte, MT';
-
 	const operatorStyle = {
 		display: 'flex',
 		flexFlow: 'column nowrap',
@@ -18,15 +15,33 @@ let location = 'Butte, MT';
 		color: 'white',
 		borderRadius: '50%',
 		backgroundColor: '#5074AB',
+		backgroundImage: `url(${props.chatter.avatar})`,
+		backgroundSize:'contain',
 		padding: '20px',
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center'
 	};
+	let name = '';
+	if (!props.chatter.name) {
+		name = 'name not provided';
+	} else {
+		name = props.chatter.name;
+	}
+	let avatar = '';
+	if (!props.chatter.avatar) {
+		 avatar = <h2>{name}</h2>;
+	}
+	let location = '';
+	if (!props.chatter.location) {
+		location = 'location not provided';
+	} else {
+		location = props.chatter.location;
+	}
 	return(
   <div style={operatorStyle}>
     <div style={avatarStyle}>
-      <h2>{name}</h2>
+      {avatar}
     </div>
     <div className="info">
       <p>{name}</p>
@@ -56,6 +71,7 @@ let location = 'Butte, MT';
 	);
 }
 ChatterInfo.propTypes = {
-	disconnect: PropTypes.func
+	disconnect: PropTypes.func,
+	chatter: PropTypes.object
 };
 export default ChatterInfo;
