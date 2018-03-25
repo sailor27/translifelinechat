@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import types from './../constants';
 
 function Notes(props) {
-
+	console.log(props);
 	const notesText = 'Record session notes here';
-
+	let _notes;
 	const notesStyle = {
     marginTop: '35px',
     marginLeft: '40px',
@@ -16,17 +18,31 @@ function Notes(props) {
     justifyContent: 'flex-start',
     padding: '0px'
 	};
+
+	function handleAddingNotes(e){
+		console.log('hello');
+		e.preventDefault();
+		console.log('time to change the state ⏰');
+		const { dispatch } = props;
+		const action = {
+			type: types.ADD_NOTES,
+			notes: _notes.value
+		};
+		dispatch(action);
+		_notes.value = '';
+	}
 	return(
   <div style={notesStyle}>
     <div style={{backgroundColor: 'black', color: 'white', display: 'flex', fontStyle: 'italic', justifyContent: 'space-between', alignItems:'center', padding:'0px 8px'}}>
       <h3> # {props.id} Notes:</h3>
-      <button className='lilb'>Save</button>
+      <button onClick={handleAddingNotes}className='lilb' type='submit'>Save</button>
     </div>
     <form>
       <textarea
         type='text'
         id='notes'
         placeholder={notesText}
+        ref={(input) => {_notes = input;}}
         />
     </form>
     <style jsx>
@@ -56,5 +72,4 @@ function Notes(props) {
 Notes.propTypes ={
   id: PropTypes.number
 };
-
-export default Notes;
+export default connect()(Notes);

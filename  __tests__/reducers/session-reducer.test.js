@@ -22,4 +22,11 @@ describe('sessionReducer', () => {
     expect(sessionReducer(defaultState.session, {type: types.ADD_MESSAGE})).toEqual(testState);
   });
 
+	test('Should add notes to session object', () => {
+		let testNotes = '';
+		let testState = Object.assign({}, defaultState.session, {notes: testNotes});
+
+		expect(sessionReducer(defaultState.session, {type: types.ADD_NOTES})).toEqual(testState);
+	});
+
 });
