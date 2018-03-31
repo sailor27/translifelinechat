@@ -71,14 +71,16 @@ class Home extends React.Component{
 					<Incoming
 						session={this.props.session}
 						connectUser={handleConnectingUser}
-						startSession={handleSessionStart}
 					/>
 				</div>;
 			} else {
 			console.log('👁 condition 4');
 			mainContent=<div>
 				<Info/>
-				<Session currentSession={this.props.session} currentUser= {this.props.user}/>
+				<Session currentSession={this.props.session} 	currentUser= {this.props.user}
+					startSession={handleSessionStart}
+					endSession={handleSessionEnd}
+				/>
 			</div>;
 			}
 		return(

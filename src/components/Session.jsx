@@ -40,15 +40,15 @@ class Session extends React.Component{
 		let time;
 		let _string = null;
 
+		const { dispatch } = this.props;
 
 		function handleAddingMessage(e){
 			e.preventDefault();
 			console.log('time to change the state ⏲');
-			const { dispatch } = this.props;
 			const action = {
 				type: types.ADD_MESSAGE,
 				timeStamp: Date.now(),
-				isOp: this.props.currentUser.isOperator,
+				isOp: user.isOperator,
 				string: _string.value
 			};
 			dispatch(action);
