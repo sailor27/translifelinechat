@@ -37,5 +37,11 @@ describe('sessionReducer', () => {
 
 		expect(sessionReducer(defaultState.session, {type: types.START_SESSION})).toEqual(testState);
 	})
+	test('Should update sessionClosed when component unmounts', () => {
+		let testTime = moment(Date.now()).format('MMMM Do YYYY, h:mm:ss a');
+		let testState = Object.assign({}, defaultState.session, {timeClosed: testTime});
+
+		expect(sessionReducer(defaultState.session, {type: types.END_SESSION})).toEqual(testState);
+	})
 
 });

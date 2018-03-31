@@ -32,6 +32,10 @@ export default (state = defaultState.session, action) => {
 			newTime = moment(Date.now()).format('MMMM Do YYYY, h:mm:ss a');
 			newState = Object.assign({}, state, {timeStarted:newTime});
 			return newState;
+		case types.END_SESSION:
+			newTime = moment(Date.now()).format('MMMM Do YYYY, h:mm:ss a');
+			newState = Object.assign({}, state, {timeClosed:newTime});
+			return newState;
 
     default:
       return state;

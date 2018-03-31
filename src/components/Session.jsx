@@ -9,9 +9,11 @@ class Session extends React.Component{
 		super(props);
 		console.log(this.props);
 	}
-
 	componentDidMount(){
 		this.props.startSession();
+	}
+	componentWillUnmount(){
+		this.props.endSession();
 	}
 	render(){
 
@@ -106,7 +108,8 @@ class Session extends React.Component{
 Session.propTypes = {
 	currentSession: PropTypes.object,
 	currentUser: PropTypes.object,
-	startSession: PropTypes.func
+	startSession: PropTypes.func,
+	endSession: PropTypes.func
 };
 
 export default connect()(Session);

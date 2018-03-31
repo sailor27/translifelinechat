@@ -32,6 +32,13 @@ class Home extends React.Component{
 			};
 			dispatch(action);
 		}
+		function handleSessionEnd(){
+			console.log('time to change the state 🎬');
+			const action = {
+				type: types.END_SESSION
+			};
+			dispatch(action);
+		}
 
 		function handleConnectingUser(){
 			console.log('time to change the state 🕒');
@@ -53,6 +60,7 @@ class Home extends React.Component{
 				<Session currentSession={this.props.session}
 					currentUser= {this.props.user}
 					startSession={handleSessionStart}
+					endSession={handleSessionEnd}
 				/>
 				<Notes id={this.props.session.id}/>
 			</div>;
