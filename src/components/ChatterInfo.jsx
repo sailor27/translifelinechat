@@ -16,7 +16,7 @@ function ChatterInfo(props){
 		borderRadius: '50%',
 		backgroundColor: '#5074AB',
 		backgroundImage: `url(${props.chatter.avatar})`,
-		backgroundSize:'contain',
+		backgroundSize:'cover',
 		padding: '20px',
 		display: 'flex',
 		justifyContent: 'center',

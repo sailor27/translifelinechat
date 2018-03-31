@@ -5,3 +5,4 @@ export const ADD_OPERATOR = 'ADD_OPERATOR';
 export const ADD_CHATTER = 'ADD_CHATTER';
 export const ADD_MESSAGE = 'ADD_MESSAGE';
 export const ADD_NOTES = 'ADD_NOTES';
+export const START_SESSION = 'START_SESSION';

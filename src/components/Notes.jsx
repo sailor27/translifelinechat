@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import types from './../constants';
 
 function Notes(props) {
-	console.log(props);
 	const notesText = 'Record session notes here';
 	let _notes;
 	const notesStyle = {
@@ -20,7 +19,6 @@ function Notes(props) {
 	};
 
 	function handleAddingNotes(e){
-		console.log('hello');
 		e.preventDefault();
 		console.log('time to change the state ⏰');
 		const { dispatch } = props;
@@ -35,7 +33,7 @@ function Notes(props) {
   <div style={notesStyle}>
     <div style={{backgroundColor: 'black', color: 'white', display: 'flex', fontStyle: 'italic', justifyContent: 'space-between', alignItems:'center', padding:'0px 8px'}}>
       <h3> # {props.id} Notes:</h3>
-      <button onClick={handleAddingNotes}className='lilb' type='submit'>Save</button>
+      <button onClick={handleAddingNotes} className='lilb' type='submit'>Save</button>
     </div>
     <form>
       <textarea

@@ -1,6 +1,8 @@
 import sessionReducer from './../../src/reducers/session-reducer';
 import {defaultState} from './../../src/defaultState';
 import types from './../../src/constants';
+import moment from 'moment';
+
 
 describe('sessionReducer', () => {
 
@@ -22,11 +24,18 @@ describe('sessionReducer', () => {
     expect(sessionReducer(defaultState.session, {type: types.ADD_MESSAGE})).toEqual(testState);
   });
 
-	test('Should add notes to session object', () => {
-		let testNotes = '';
-		let testState = Object.assign({}, defaultState.session, {notes: testNotes});
+	// test('Should add notes to session object', () => {
+	// 	let testNotes = '';
+	// 	let testState = Object.assign({}, defaultState.session, {notes: testNotes});
+  //
+	// 	expect(sessionReducer(defaultState.session, {type: types.ADD_NOTES})).toEqual(testState);
+	// });
 
-		expect(sessionReducer(defaultState.session, {type: types.ADD_NOTES})).toEqual(testState);
-	});
+	test('Should update session start time when component mounts', () => {
+		let testTime = moment(Date.now()).format('MMMM Do YYYY, h:mm:ss a');
+		let testState = Object.assign({}, defaultState.session, {timeStarted: testTime});
+
+		expect(sessionReducer(defaultState.session, {type: types.START_SESSION})).toEqual(testState);
+	})
 
 });

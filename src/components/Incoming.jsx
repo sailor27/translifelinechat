@@ -31,7 +31,7 @@ function Incoming(props){
 	};
 
 	let waitTime = moment(props.session.timeRequested).startOf('hour').fromNow();
-
+	console.log(props);
 	return(
   <div style={incomingStyle}>
     <h1>Incoming Sessions</h1>

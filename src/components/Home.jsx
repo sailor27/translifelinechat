@@ -21,8 +21,17 @@ class Home extends React.Component{
 				padding: '10px',
 				justifyContent: 'space-around',
 			};
-
 		const { dispatch } = this.props;
+
+		let mainContent;
+
+		function handleSessionStart(){
+			console.log('time to change the state 🕰');
+			const action = {
+				type: types.START_SESSION
+			};
+			dispatch(action);
+		}
 
 		function handleConnectingUser(){
 			console.log('time to change the state 🕒');
@@ -31,56 +40,56 @@ class Home extends React.Component{
 			};
 			dispatch(action);
 		}
-
-		let mainContent;
-		if(!this.props.user.isConnected && !this.props.user.isOperator){
+			if(!this.props.user.isConnected && !this.props.user.isOperator){
 			console.log('👁 condition 1');
-			mainContent =
-  <div>
-    <Info/>
-    <HowTo connectUser={handleConnectingUser}/>
-  </div>;
-		} else if (this.props.user.isConnected && this.props.user.isOperator){
+			mainContent = <div>
+				<Info/>
+				<HowTo connectUser={handleConnectingUser}/>
+			</div>;
+			} else if (this.props.user.isConnected && this.props.user.isOperator){
 			console.log('👁 condition 2');
-  mainContent=<div>
-    <Info/>
-    <Session currentSession={this.props.session} currentUser= {this.props.user}/>
-    <Notes id={this.props.session.id}/>
-  </div>;
-} else if (this.props.user.isOperator){
+  		mainContent=<div>
+				<Info/>
+				<Session currentSession={this.props.session}
+					currentUser= {this.props.user}
+					startSession={handleSessionStart}
+				/>
+				<Notes id={this.props.session.id}/>
+			</div>;
+			} else if (this.props.user.isOperator){
 			console.log('👁 condition 3');
-			mainContent =
-  <div className='main'>
-    <OperatorStatus/>
-    <Incoming
-      session={this.props.session}
-      connectUser={handleConnectingUser}
-		/>
-  </div>;
-		} else {
+				mainContent = <div className='main'>
+					<OperatorStatus/>
+					<Incoming
+						session={this.props.session}
+						connectUser={handleConnectingUser}
+						startSession={handleSessionStart}
+					/>
+				</div>;
+			} else {
 			console.log('👁 condition 4');
-			mainContent=
-  <div>
-    <Info/>
-    <Session currentSession={this.props.session} currentUser= {this.props.user}/>
-  </div>;
-
-		}
+			mainContent=<div>
+				<Info/>
+				<Session currentSession={this.props.session} currentUser= {this.props.user}/>
+			</div>;
+			}
 		return(
-  <div style={homeStyle}>
-    <SideContent user={this.props.user} operator={this.props.operatorInfo}
-      chatter={this.props.chatterInfo}/>
-    {mainContent}
-    <style jsx >{`
-								.main {
-									display:flex;
-									flex-flow: column;
-									align-items: center;
-									min-width: 400px;
-									padding: 40px;
-								}
-							`}</style>
-  </div>
+  	<div style={homeStyle}>
+			<SideContent user={this.props.user} 			operator={this.props.operatorInfo}
+				chatter={this.props.chatterInfo}/>
+			{mainContent}
+			<style jsx >
+				{`
+					.main {
+						display:flex;
+						flex-flow: column;
+						align-items: center;
+						min-width: 400px;
+						padding: 40px;
+					}
+				`}
+			</style>
+		</div>
 		);
 	}
 }
