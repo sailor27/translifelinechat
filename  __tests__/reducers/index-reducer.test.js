@@ -2,6 +2,7 @@ import rootReducer from './../../src/reducers/index';
 import userReducer from './../../src/reducers/user-reducer';
 import operatorReducer from './../../src/reducers/operator-reducer';
 import sessionReducer from './../../src/reducers/session-reducer';
+import historyReducer from './../../src/reducers/history-reducer';
 import { createStore } from 'redux';
 import { defaultState } from './../../src/defaultState';
 

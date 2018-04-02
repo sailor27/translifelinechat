@@ -35,7 +35,8 @@ class Home extends React.Component{
 		function handleSessionEnd(){
 			console.log('time to change the state 🎬');
 			const action = {
-				type: types.END_SESSION
+				type: types.END_SESSION,
+				timeStarted: this.currentSession.timeStarted
 			};
 			dispatch(action);
 		}
@@ -47,6 +48,22 @@ class Home extends React.Component{
 			};
 			dispatch(action);
 		}
+		function handleAddingSession(){
+			console.log('time to change the state ⏰');
+			console.log(this.currentSession.timeStarted);
+			const action = {
+				type: types.ADD_SESSION,
+				id: this.currentSession.id,
+				timeRequested: this.currentSession.timeRequested,
+				timeStarted: this.currentSession.timeStarted,
+				timeClosed: this.currentSession.timeClosed,
+				operatorId: this.currentSession.operatorId,
+				notes: this.currentSession.notes
+			};
+			dispatch(action);
+
+		}
+
 			if(!this.props.user.isConnected && !this.props.user.isOperator){
 			console.log('👁 condition 1');
 			mainContent = <div>
@@ -61,6 +78,7 @@ class Home extends React.Component{
 					currentUser= {this.props.user}
 					startSession={handleSessionStart}
 					endSession={handleSessionEnd}
+					addSession={handleAddingSession}
 				/>
 				<Notes id={this.props.session.id}/>
 			</div>;
@@ -80,6 +98,7 @@ class Home extends React.Component{
 				<Session currentSession={this.props.session} 	currentUser= {this.props.user}
 					startSession={handleSessionStart}
 					endSession={handleSessionEnd}
+					addSession={handleAddingSession}
 				/>
 			</div>;
 			}

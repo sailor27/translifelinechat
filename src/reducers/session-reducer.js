@@ -8,9 +8,10 @@ let newState;
 let newTime;
 
 export default (state = defaultState.session, action) => {
-	const { timeStamp, isOp, string, notes} = action;
+
   switch (action.type) {
     case types.ADD_MESSAGE:
+		const { timeStamp, isOp, string, notes} = action;
       newMessage = {
         timeStamp: timeStamp,
         isOp: isOp,
@@ -32,9 +33,11 @@ export default (state = defaultState.session, action) => {
 			newTime = moment(Date.now()).format('MMMM Do YYYY, h:mm:ss a');
 			newState = Object.assign({}, state, {timeStarted:newTime});
 			return newState;
+
 		case types.END_SESSION:
+			const {timeStarted} = action;
 			newTime = moment(Date.now()).format('MMMM Do YYYY, h:mm:ss a');
-			newState = Object.assign({}, state, {timeClosed:newTime});
+			newState = Object.assign({}, state, {timeClosed:newTime, timeStarted: timeStarted});
 			return newState;
 
     default:

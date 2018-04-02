@@ -15,6 +15,10 @@ export const defaultState = {
 		name: undefined,
 		location: undefined
 	},
+	history: [
+
+
+	],
   session: {
     id: null,
     timeRequested: null,

@@ -4,15 +4,18 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import types from './../constants';
 
+
 class Session extends React.Component{
 	constructor(props){
 		super(props);
 	}
+
 	componentDidMount(){
 		this.props.startSession();
 	}
 	componentWillUnmount(){
 		this.props.endSession();
+		this.props.addSession();
 	}
 	render(){
 
@@ -53,6 +56,7 @@ class Session extends React.Component{
 			dispatch(action);
 			_string.value = '';
 		}
+
 
 	return(
   <div style={sessionStyle}>
@@ -108,7 +112,8 @@ Session.propTypes = {
 	currentSession: PropTypes.object,
 	currentUser: PropTypes.object,
 	startSession: PropTypes.func,
-	endSession: PropTypes.func
+	endSession: PropTypes.func,
+	addSession: PropTypes.func,
 };
 
 export default connect()(Session);
