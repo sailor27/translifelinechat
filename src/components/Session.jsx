@@ -7,7 +7,6 @@ import types from './../constants';
 class Session extends React.Component{
 	constructor(props){
 		super(props);
-		console.log(this.props);
 	}
 	componentDidMount(){
 		this.props.startSession();
