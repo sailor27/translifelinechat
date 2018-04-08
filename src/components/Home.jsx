@@ -7,8 +7,10 @@ import Incoming from './Incoming';
 import Session from './Session';
 import Notes from './Notes';
 import { connect } from 'react-redux';
-import types from './../constants';
+// import types from './../constants';
 import PropTypes from 'prop-types';
+import constants from './../constants';
+const {firebaseConfig, types} = constants;
 
 class Home extends React.Component{
 	render(){

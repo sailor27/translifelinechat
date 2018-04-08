@@ -1,5 +1,7 @@
-import types from './../constants';
 import {defaultState} from './../defaultState';
+import constants from './../constants';
+
+const {firebaseConfig, types} = constants;
 
 export default (state = defaultState.operatorInfo, action) => {
   let newOperator;

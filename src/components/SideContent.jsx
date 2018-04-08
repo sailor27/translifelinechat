@@ -8,7 +8,9 @@ import ChatterForm from './ChatterForm';
 import ChatHistory from './ChatHistory';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import types from './../constants';
+// import types from './../constants';
+import constants from './../constants';
+const {firebaseConfig, types} = constants;
 
 function SideContent(props) {
 	let time = moment(Date.now()).format('MMMM Do YYYY, h:mm:ss a');

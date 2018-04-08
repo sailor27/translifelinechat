@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import types from './../constants';
+// import types from './../constants';
+import constants from './../constants';
+const {firebaseConfig, types} = constants;
 
 function OperatorForm(props){
 	console.log(props);

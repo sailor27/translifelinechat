@@ -1,8 +1,8 @@
 import sessionReducer from './../../src/reducers/session-reducer';
 import {defaultState} from './../../src/defaultState';
-import types from './../../src/constants';
+import constants from './../../src/constants';
 import moment from 'moment';
-
+const {firebaseConfig, types} = constants;
 
 describe('sessionReducer', () => {
 
@@ -36,12 +36,12 @@ describe('sessionReducer', () => {
 		let testState = Object.assign({}, defaultState.session, {timeStarted: testTime});
 
 		expect(sessionReducer(defaultState.session, {type: types.START_SESSION})).toEqual(testState);
-	})
+	});
 	test('Should update sessionClosed when component unmounts', () => {
 		let testTime = moment(Date.now()).format('MMMM Do YYYY, h:mm:ss a');
 		let testState = Object.assign({}, defaultState.session, {timeClosed: testTime});
 
 		expect(sessionReducer(defaultState.session, {type: types.END_SESSION})).toEqual(testState);
-	})
+	});
 
 });

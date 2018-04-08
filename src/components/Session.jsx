@@ -2,8 +2,9 @@ import React from 'react';
 import Message from './Message';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import types from './../constants';
-
+// import types from './../constants';
+import constants from './../constants';
+const {firebaseConfig, types} = constants;
 
 class Session extends React.Component{
 	constructor(props){

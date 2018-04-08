@@ -1,4 +1,5 @@
-import types from './../constants';
+// import types from './../constants';
+import constants from './../constants';
 import {defaultState} from './../defaultState';
 import moment from 'moment';
 let newMessage;
@@ -7,8 +8,9 @@ let newNotes;
 let newState;
 let newTime;
 
-export default (state = defaultState.session, action) => {
+const {firebaseConfig, types} = constants;
 
+export default (state = defaultState.session, action) => {
   switch (action.type) {
     case types.ADD_MESSAGE:
 		const { timeStamp, isOp, string, notes} = action;

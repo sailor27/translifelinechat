@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import types from './../constants';
+import constants from './../constants';
+
+const {firebaseConfig, types} = constants;
 
 function ChatterForm(props){
   const chatterFormStyle={

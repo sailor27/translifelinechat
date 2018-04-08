@@ -4,7 +4,9 @@ import sessionReducer from './session-reducer';
 import chatterReducer from './chatter-reducer';
 import historyReducer from './history-reducer';
 import {combineReducers} from 'redux';
-import types from './../constants';
+// import types from './../constants';
+import constants from './../constants';
+const {firebaseConfig, types} = constants;
 import {defaultState} from './../defaultState';
 
 const appReducer = combineReducers({

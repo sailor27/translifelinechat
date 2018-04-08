@@ -1,6 +1,7 @@
 import chatterReducer from './../../src/reducers/chatter-reducer';
 import {defaultState} from './../../src/defaultState';
-import types from './../../src/constants';
+import constants from './../../src/constants';
+const {firebaseConfig, types} = constants;
 
 	describe('chatterReducer', () => {
 

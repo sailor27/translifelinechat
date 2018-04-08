@@ -1,6 +1,7 @@
 import operatorReducer from './../../src/reducers/operator-reducer';
 import {defaultState} from './../../src/defaultState';
-import types from './../../src/constants';
+import constants from './../../src/constants';
+const {firebaseConfig, types} = constants;
 
 describe('operatorReducer', () => {
 
