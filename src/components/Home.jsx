@@ -67,48 +67,48 @@ class Home extends React.Component{
 			if(!this.props.user.isConnected && !this.props.user.isOperator){
 			console.log('👁 condition 1');
 			mainContent = <div>
-				<Info/>
-				<HowTo connectUser={handleConnectingUser}/>
+  <Info/>
+  <HowTo connectUser={handleConnectingUser}/>
 			</div>;
 			} else if (this.props.user.isConnected && this.props.user.isOperator){
 			console.log('👁 condition 2');
   		mainContent=<div>
-				<Info/>
-				<Session currentSession={this.props.session}
-					currentUser= {this.props.user}
-					startSession={handleSessionStart}
-					endSession={handleSessionEnd}
-					addSession={handleAddingSession}
+    <Info/>
+    <Session currentSession={this.props.session}
+      currentUser= {this.props.user}
+      startSession={handleSessionStart}
+      endSession={handleSessionEnd}
+      addSession={handleAddingSession}
 				/>
-				<Notes id={this.props.session.id}/>
-			</div>;
+    <Notes id={this.props.session.id}/>
+  </div>;
 			} else if (this.props.user.isOperator){
 			console.log('👁 condition 3');
 				mainContent = <div className='main'>
-					<OperatorStatus/>
-					<Incoming
-						session={this.props.session}
-						connectUser={handleConnectingUser}
+  <OperatorStatus/>
+  <Incoming
+    session={this.props.session}
+    connectUser={handleConnectingUser}
 					/>
 				</div>;
 			} else {
 			console.log('👁 condition 4');
 			mainContent=<div>
-				<Info/>
-				<Session currentSession={this.props.session} 	currentUser= {this.props.user}
-					startSession={handleSessionStart}
-					endSession={handleSessionEnd}
-					addSession={handleAddingSession}
+  <Info/>
+  <Session currentSession={this.props.session} 	currentUser= {this.props.user}
+    startSession={handleSessionStart}
+    endSession={handleSessionEnd}
+    addSession={handleAddingSession}
 				/>
 			</div>;
 			}
 		return(
   	<div style={homeStyle}>
-			<SideContent user={this.props.user} 			operator={this.props.operatorInfo}
-				chatter={this.props.chatterInfo}/>
-			{mainContent}
-			<style jsx >
-				{`
+    <SideContent user={this.props.user} 			operator={this.props.operatorInfo}
+      chatter={this.props.chatterInfo}/>
+    {mainContent}
+    <style jsx >
+      {`
 					.main {
 						display:flex;
 						flex-flow: column;
@@ -117,8 +117,8 @@ class Home extends React.Component{
 						padding: 40px;
 					}
 				`}
-			</style>
-		</div>
+    </style>
+  </div>
 		);
 	}
 }
