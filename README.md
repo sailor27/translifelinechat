@@ -94,3 +94,13 @@ Future Enhancements Required Tools:
 
 ## Issues/Bugs 🐛
 **I am struggling with understanding how to build my component tree.**
+
+
+## Guide:
+[hooking up redux to firebase](https://itnext.io/hooking-up-firebase-to-your-redux-store-a5e799cf84c4)
+[intro to middleware](https://www.learnhowtoprogram.com/react/advanced-topics/introduction-to-middleware)
+next steps:
+* connect middleware
+* install thunk
+* persist in local storage
+* install firebase
