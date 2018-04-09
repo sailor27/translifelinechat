@@ -1,9 +1,9 @@
 # **Trans Lifeline Web Chat** ☎️
 
 ## Project Description
-[Intro paragraph about Trans Lifeline]
+Trans Lifeline is a non-profit hotline for transgender people experiencing crisis. It is staffed by transgender volunteer operators. Their mission is to end transgender suicide and improve overall mental health of transgender people through education, advocacy, and direct service.
 
-The  purpose of this application is to provide a text-based mode of talking with a Trans Lifeline volunteer operator, an alternative to a voice phone call.
+The purpose of this application is to create a live chat mode of talking with a Trans Lifeline volunteer operator, an alternative to a voice phone call. The application expresses a user story for a person seeking crisis support using chat, and a user story for a volunteer operator connecting to people in the queue, chatting, and creating case notes.
 
 ### MVP:
 **Session:**
