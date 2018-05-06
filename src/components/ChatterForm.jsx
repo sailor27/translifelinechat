@@ -19,9 +19,11 @@ function ChatterForm(props){
     justifyContent: 'center',
     alignItems: 'center'
   };
+
 	let _avatar = null;
 	let _name = null;
 	let _location = null;
+
 	function handleAddingChatter(){
 		console.log('time to change the state ⌛️');
 		const { dispatch } = props;
@@ -36,44 +38,43 @@ function ChatterForm(props){
 		// _name.value = '';
 		// _location.value = '';
 	}
-  return(
-    <form style={chatterFormStyle} onSubmit={handleAddingChatter}>
-      <h2>Your Info</h2>
-      <div className='sCard'>
-        <small>Adding information is optional. </small>
-        <small>We will not share your information with anyone.</small>
+  return (
+	<form style={chatterFormStyle} onSubmit={handleAddingChatter}>
+		<h2>Your Info</h2>
+		<div className='sCard'>
+			<small>Adding information is optional. </small>
+			<small>We will not share your information with anyone.</small>
 
-        <div style={avatarStyle}>
-          <div style={{float:'left'}}>
-            <input
-              type='text'
-              id='avatar'
-              placeholder= 'paste an image url'
-              ref={(input) => {_avatar = input;}}/>
-            <button className='lilb'>add</button>
-          </div>
-        </div>
-        <div>
-          <label>your name <span style={{fontSize: '0.75em'}}>(what you would like us to call you)</span></label>
-          <input
-            type='text'
-            id='name'
-            placeholder='ex. Jamie'
-            ref={(input) => {_name = input;}}/>
-          <button className='lilb'>add</button>
-        </div>
-        <label style={{marginRight:'60%'}}>your location</label>
-        <div>
-          <input
-            type='text'
-            id='location'
-            placeholder='ex. Sarasota, FL'
-            ref={(input) => {_location = input;}}/>
-          <button type='submit'className='lilb'>add</button>
-        </div>
-      </div>
-
-    </form>
+			<div style={avatarStyle}>
+				<div style={{float:'left'}}>
+					<input
+						type='text'
+						id='avatar'
+						placeholder= 'paste an image url'
+						ref={(input) => {_avatar = input;}}/>
+					<button className='lilb'>add</button>
+				</div>
+			</div>
+			<div>
+				<label>your name <span style={{fontSize: '0.75em'}}>(what you would like us to call you)</span></label>
+				<input
+					type='text'
+					id='name'
+					placeholder='ex. Jamie'
+					ref={(input) => {_name = input;}}/>
+				<button className='lilb'>add</button>
+			</div>
+			<label style = {{marginRight:'60%'}}>your location</label>
+			<div>
+				<input
+					type='text'
+					id='location'
+					placeholder='ex. Sarasota, FL'
+					ref={(input) => {_location = input;}}/>
+				<button type='submit'className='lilb'>add</button>
+			</div>
+		</div>
+	</form>
   );
 }
 

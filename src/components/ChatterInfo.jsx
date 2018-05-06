@@ -30,7 +30,7 @@ function ChatterInfo(props){
 	}
 	let avatar = '';
 	if (!props.chatter.avatar) {
-		 avatar = <h2>{name}</h2>;
+        avatar = <h2>{name}</h2>;
 	}
 	let location = '';
 	if (!props.chatter.location) {
@@ -39,18 +39,18 @@ function ChatterInfo(props){
 		location = props.chatter.location;
 	}
 	return(
-  <div style={operatorStyle}>
-    <div style={avatarStyle}>
-      {avatar}
-    </div>
-    <div className="info">
-      <p>{name}</p>
-      <p>{location}</p>
-      <p>Connected Now</p>
-      <button onClick={props.disconnect}>END CHAT</button>
-    </div>
-    <style jsx>
-      {`
+		<div style={operatorStyle}>
+			<div style={avatarStyle}>
+				{avatar}
+			</div>
+			<div className="info">
+				<p>{name}</p>
+				<p>{location}</p>
+				<p>Connected Now</p>
+				<button onClick={props.disconnect}>END CHAT</button>
+			</div>
+			<style jsx>
+				{`
 				.info {
 					width: 100%;
 					min-height: 140px;
@@ -66,8 +66,8 @@ function ChatterInfo(props){
 					text-align: center;
 				}
 			`}
-    </style>
-  </div>
+			</style>
+		</div>
 	);
 }
 ChatterInfo.propTypes = {

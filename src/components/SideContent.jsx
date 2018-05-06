@@ -43,8 +43,8 @@ function SideContent(props) {
 	} else if (props.user.isConnected && props.user.isOperator){
 		console.log('🔍 condition 2');
 		topBox = <ChatterInfo
-  	disconnect={handleDisconnectingUser}
-  	chatter={props.chatter}/>;
+			disconnect={handleDisconnectingUser}
+			chatter={props.chatter}/>;
 		bottomBox = <ChatHistory/>;
 	} else if (props.user.isOperator){
 		console.log('🔍 condition 3');
@@ -53,16 +53,16 @@ function SideContent(props) {
 	} else {
 		console.log('🔍 condition 4');
 		topBox = <OperatorInfo operator={props.operator}
-  	disconnect={handleDisconnectingUser}/>;
+			disconnect={handleDisconnectingUser}/>;
 	}
 
 
 	return(
-  <div style={sideStyle}>
-    {topBox}
-    <h4>🕑 {time}</h4>
-    {bottomBox}
-  </div>
+		<div style={sideStyle}>
+			{topBox}
+			<h4>🕑 {time}</h4>
+			{bottomBox}
+		</div>
 	);
 }
 

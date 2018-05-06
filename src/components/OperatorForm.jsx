@@ -42,42 +42,42 @@ function OperatorForm(props){
 		_location.value = '';
 	}
   return(
-    <div>
-      <h2>Operator Info</h2>
-      <div className='sCard'>
-        <form onSubmit={handleAddingOperator}>
-          <div style={avatarStyle}>
-            <input
-              type='text'
-              id='avatar'
-              placeholder={props.operator.avatar}
-              ref={(input) => {_avatar = input;}}
+	<div>
+		<h2>Operator Info</h2>
+		<div className='sCard'>
+			<form onSubmit={handleAddingOperator}>
+				<div style={avatarStyle}>
+					<input
+						type='text'
+						id='avatar'
+						placeholder={props.operator.avatar}
+						ref={(input) => {_avatar = input;}}
 						/>
-            <label>avatar url</label>
-          </div>
-          <div>
-            <label>name</label>
-            <input
-              type='text'
-              id='name'
-              placeholder={props.operator.name}
-              ref={(input) => {_name = input;}}
+					<label>avatar url</label>
+				</div>
+				<div>
+					<label>name</label>
+					<input
+						type='text'
+						id='name'
+						placeholder={props.operator.name}
+						ref={(input) => {_name = input;}}
 						/>
-          </div>
-          <div>
-            <label>location</label>
-            <input
-              type='text'
-              id='location'
-              placeholder={props.operator.location}
-              ref={(input) => {_location = input;}}
+				</div>
+				<div>
+					<label>location</label>
+					<input
+						type='text'
+						id='location'
+						placeholder={props.operator.location}
+						ref={(input) => {_location = input;}}
 						/>
-          </div>
-          <h3>id: {props.operator.id}</h3>
-          <button className='lilb'>Update</button>
-        </form>
-      </div>
-      <style jsx>{`
+				</div>
+				<h3>id: {props.operator.id}</h3>
+				<button className='lilb'>Update</button>
+			</form>
+		</div>
+		<style jsx>{`
 				form {
 					display: flex;
 					flex-flow: column nowrap;
@@ -85,9 +85,9 @@ function OperatorForm(props){
 				}
 			`}
 
-      </style>
+		</style>
 
-    </div>
+	</div>
   );
 }
 

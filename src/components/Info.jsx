@@ -11,11 +11,11 @@ function Info() {
 		marginLeft: '40px'
 	};
 	return(
-  <div style={infoStyle}>
-    <h1>
+		<div style={infoStyle}>
+			<h1>
 			Trans Lifeline Chat</h1>
-    <p>{infoText}</p>
-  </div>
+			<p>{infoText}</p>
+		</div>
 	);
 }
 

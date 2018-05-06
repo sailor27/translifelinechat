@@ -32,21 +32,21 @@ function Notes(props) {
 		_notes.value = '';
 	}
 	return(
-  <div style={notesStyle}>
-    <div style={{backgroundColor: 'black', color: 'white', display: 'flex', fontStyle: 'italic', justifyContent: 'space-between', alignItems:'center', padding:'0px 8px'}}>
-      <h3> # {props.id} Notes:</h3>
-      <button onClick={handleAddingNotes} className='lilb' type='submit'>Save</button>
-    </div>
-    <form>
-      <textarea
-        type='text'
-        id='notes'
-        placeholder={notesText}
-        ref={(input) => {_notes = input;}}
+		<div style={notesStyle}>
+			<div style={{backgroundColor: 'black', color: 'white', display: 'flex', fontStyle: 'italic', justifyContent: 'space-between', alignItems:'center', padding:'0px 8px'}}>
+				<h3> # {props.id} Notes:</h3>
+				<button onClick={handleAddingNotes} className='lilb' type='submit'>Save</button>
+			</div>
+			<form>
+				<textarea
+					type='text'
+					id='notes'
+					placeholder={notesText}
+					ref={(input) => {_notes = input;}}
         />
-    </form>
-    <style jsx>
-      {`
+			</form>
+			<style jsx>
+				{`
         textarea {
           padding: 15px;
           box-sizing: border-box;
@@ -64,8 +64,8 @@ function Notes(props) {
           height: 50%;
         }
         `}
-    </style>
-  </div>
+			</style>
+		</div>
 	);
 }
 

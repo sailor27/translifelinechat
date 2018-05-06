@@ -57,54 +57,55 @@ class Session extends React.Component{
 			dispatch(action);
 			_string.value = '';
 		}
+	return (
+		<div style={sessionStyle}>
+			<div style={convoAreaStyle}>
+				<ul style={{padding: '0px'}}>
+					{messages.map((message, i) =>
+						<Message string={messages[i].string}
+							time = {messages[i].timeStamp}
+							isOp={messages[i].isOp}
+							key={messages[i].timeStamp} />
+                    )}
 
+				</ul>
+			</div>
+			<form onSubmit={handleAddingMessage}>
+				<input
+					type='text'
+					id='name'
+					placeholder= 'Type your message here [Press Enter to Send]'
+					ref={(input) => {_string = input;}}/>
+				<button type='submit'>SEND</button>
+			</form>
+			<style jsx>
+				{`form {
+                    display: flex;
+                    box-sizing: border-box;
+                    width: 100%;
+                }
+                input {
+                    width: 100%;
+                    font-size: 1em;
+                    line-height: 2em;
+                    padding-left: 10px;
+                    cursor: pointer;
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                    box-sizing: border-box;
+                    border: 1px solid var(--dkgrey);
+                }
+                input::placeholder{
+                    color: var(--dkgrey);
+                    padding-left: 10px;
+                }
+                li {
+                    list-style: none;
+                }
 
-	return(
-  <div style={sessionStyle}>
-    <div style={convoAreaStyle}>
-      <ul style={{padding: '0px'}}>
-        {messages.map((message, i) =>
-          <Message string={messages[i].string}
-            time = {messages[i].timeStamp}
-            isOp={messages[i].isOp}
-            key={messages[i].timeStamp} />
-				)}
-      </ul>
-    </div>
-    <form onSubmit={handleAddingMessage}>
-      <input
-        type='text'
-        id='name'
-        placeholder= 'Type your message here [Press Enter to Send]'
-        ref={(input) => {_string = input;}}/>
-      <button type='submit'>SEND</button>
-    </form>
-    <style jsx>{`
-									form {
-										display: flex;
-										box-sizing: border-box;
-										width: 100%;
-									}
-									input {
-										width: 100%;
-										font-size: 1em;
-										line-height: 2em;
-										padding-left: 10px;
-										cursor: pointer;
-										border-top-right-radius: 5px;
-										border-bottom-right-radius: 5px;
-										box-sizing: border-box;
-										border: 1px solid var(--dkgrey);
-									}
-									input::placeholder{
-										color: var(--dkgrey);
-										padding-left: 10px;
-									}
-									li{
-										list-style: none;
-									}
-									`}</style>
-  </div>
+                `}
+			</style>
+		</div>
 		);
 	}
 }

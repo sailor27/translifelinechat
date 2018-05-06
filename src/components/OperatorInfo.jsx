@@ -10,7 +10,7 @@ function OperatorInfo(props){
 		alignItems: 'center',
 		padding: '30px 0px 30px 0px',
 	};
-	
+
 	const avatarStyle = {
 		height: '180px',
 		width: '180px',
@@ -25,18 +25,18 @@ function OperatorInfo(props){
 		alignItems: 'center'
 	};
 	return(
-  <div style={operatorStyle}>
-    <h3>Chatting with</h3>
-    <div style={avatarStyle}>
-    </div>
-    <div className="info">
-      <p>{operator.name}</p>
-      <p>{operator.location}</p>
-      <p>Connected Now</p>
-      <button onClick={props.disconnect}>END CHAT</button>
-    </div>
-    <style jsx>
-      {`
+		<div style={operatorStyle}>
+			<h3>Chatting with</h3>
+			<div style={avatarStyle}>
+			</div>
+			<div className="info">
+				<p>{operator.name}</p>
+				<p>{operator.location}</p>
+				<p>Connected Now</p>
+				<button onClick={props.disconnect}>END CHAT</button>
+			</div>
+			<style jsx>
+				{`
 				.info {
 					width: 100%;
 					min-height: 140px;
@@ -52,8 +52,8 @@ function OperatorInfo(props){
 					text-align: center;
 				}
 			`}
-    </style>
-  </div>
+			</style>
+		</div>
 	);
 }
 

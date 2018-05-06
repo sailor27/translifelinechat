@@ -17,15 +17,15 @@ function HowTo(props) {
 	};
 
 	return(
-  <div style={howToStyle}>
-    <h1 style={{fontFamily:'Nunito', fontWeight: 'bold'}}> How to Chat with Trans Lifeline</h1>
-    <ol>
-      {howToChat.map((step, index) =>
-        <div key={index} className='list'><li style={{marginLeft: '5px'}}>{step}</li></div>)}
-    </ol>
-    <button onClick={props.connectUser}>Connect</button>
+		<div style={howToStyle}>
+			<h1 style={{fontFamily:'Nunito', fontWeight: 'bold'}}> How to Chat with Trans Lifeline</h1>
+			<ol>
+				{howToChat.map((step, index) =>
+					<div key={index} className='list'><li style={{marginLeft: '5px'}}>{step}</li></div>)}
+			</ol>
+			<button onClick={props.connectUser}>Connect</button>
 
-    <style jsx> {`
+			<style jsx> {`
 			ol{
 				height: 70%;
 				text-align: left;
@@ -46,7 +46,7 @@ function HowTo(props) {
 				margin-bottom: 20px;
 			}
 		`}</style>
-  </div>
+		</div>
 	);
 }
 

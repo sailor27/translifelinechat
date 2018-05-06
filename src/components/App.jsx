@@ -18,9 +18,9 @@ function App(){
 		justifyContent: 'center',
 	};
 	return(
-  <div style={appStyle}>
-    <style global jsx>
-      {`
+		<div style={appStyle}>
+			<style global jsx>
+				{`
 				:root {
 					--blue: #5074AB;
 					--rose: #E27995;
@@ -78,10 +78,10 @@ function App(){
 					font-weight: 700;
 				}
 				`}
-    </style>
-    <Header/>
-    <Home/>
-  </div>
+			</style>
+			<Header/>
+			<Home/>
+		</div>
 	);
 }
 export default App;

@@ -42,12 +42,12 @@ function Message(props){
 	}
 
 	return(
-  <div style={messageAreaStyle}>
-    <div style={messageStyle}>
-      <li>{props.string}</li>
-      {/*<div className='tri'></div>*/}
-      <style jsx>
-        {`
+		<div style={messageAreaStyle}>
+			<div style={messageStyle}>
+				<li>{props.string}</li>
+				{/*<div className='tri'></div>*/}
+				<style jsx>
+					{`
 				li {
 					list-style:none;
 				}
@@ -61,10 +61,10 @@ function Message(props){
 					border-left: 18px solid transparent;
 				}
 			`}
-      </style>
-    </div>
-    <p style={{textAlign: 'left', margin: '0px', color: '#979797', fontSize: '0.7em'}}>{moment(props.time).format('MMMM Do, h:mm a')}</p>
-  </div>
+				</style>
+			</div>
+			<p style={{textAlign: 'left', margin: '0px', color: '#979797', fontSize: '0.7em'}}>{moment(props.time).format('MMMM Do, h:mm a')}</p>
+		</div>
 	);
 }
 
