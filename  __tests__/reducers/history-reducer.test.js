@@ -2,6 +2,7 @@ import historyReducer from './../../src/reducers/session-reducer';
 import {defaultState} from './../../src/defaultState';
 import constants from './../../src/constants';
 const {firebaseConfig, types} = constants;
+
 let testSession = {
     id: null,
     timeRequested: null,
@@ -22,6 +23,7 @@ let testSession = {
     ],
     notes: ''
   };
+  
 describe('historyReducer', () => {
 
 	test('Should return default state if no action is recognized', () => {
@@ -29,12 +31,11 @@ describe('historyReducer', () => {
 	});
 
 	test('Should add session to history array', () => {
+
 		let testHistory = defaultState.history.slice();
 		testHistory.push(testSession);
 
-		let testState = Object.assign({}, defaultState.history, testHistory);
-
-		expect(historyReducer(defaultState.history, {type: types.ADD_SESSION})).toEqual(testState);
+		expect(historyReducer(defaultState.history, {type: types.ADD_SESSION})).toEqual(testHistory);
 	});
 
 });

@@ -6,7 +6,8 @@ let newMessage;
 let messages;
 let newNotes;
 let newState;
-let newTime;
+let newStartTime;
+let newEndTime;
 
 const {firebaseConfig, types} = constants;
 
@@ -33,13 +34,13 @@ export default (state = defaultState.session, action) => {
 			return newState;
 
 		case types.START_SESSION:
-			newTime = moment(Date.now()).format('MMMM Do YYYY, h:mm:ss a');
-			newState = Object.assign({}, state, {timeStarted:newTime});
+			newStartTime = moment(Date.now()).format('MMMM Do YYYY, h:mm:ss a');
+			newState = Object.assign({}, state, {timeStarted:newStartTime});
 			return newState;
 
 		case types.END_SESSION:
-			newTime = moment(Date.now()).format('MMMM Do YYYY, h:mm:ss a');
-			newState = Object.assign({}, state, {timeClosed:newTime});
+			newEndTime = moment(Date.now()).format('MMMM Do YYYY, h:mm:ss a');
+			newState = Object.assign({}, state, {timeClosed:newEndTime});
 			return newState;
 
     default:

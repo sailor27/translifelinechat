@@ -25,7 +25,8 @@ class Home extends React.Component {
 		};
         const { dispatch } = this.props;
         let mainContent;
-        const {user, operatorInfo, chatterInfo, session} = this.props;
+        const {user, operatorInfo, chatterInfo, session, history} = this.props;
+
         function handleSessionStart() {
             console.log('time to change the state 🕰');
             const action = {
@@ -37,7 +38,7 @@ class Home extends React.Component {
             console.log('time to change the state 🎬');
             const action = {
                 type: types.END_SESSION,
-                timeStarted: this.currentSession.timeStarted
+                timeStarted: session.timeStarted
             };
             dispatch(action);
         }
@@ -50,18 +51,18 @@ class Home extends React.Component {
         }
         function handleAddingSession() {
             console.log('time to change the state ⏰');
-            console.log(this.currentSession.timeStarted);
+            console.log(session.timeStarted);
+
             const action = {
                 type: types.ADD_SESSION,
-                id: this.currentSession.id,
-                timeRequested: this.currentSession.timeRequested,
-                timeStarted: this.currentSession.timeStarted,
-                timeClosed: this.currentSession.timeClosed,
-                operatorId: this.currentSession.operatorId,
-                notes: this.currentSession.notes
+                id: session.id,
+                timeRequested: session.timeRequested,
+                timeStarted: session.timeStarted,
+                timeClosed: session.timeClosed,
+                operatorId: session.operatorId,
+                notes: session.notes
             };
             dispatch(action);
-
         }
 
         /* eslint-disable*/
@@ -139,7 +140,8 @@ const mapStateToProps = state => {
 		user: state.user,
 		operatorInfo: state.operatorInfo,
 		chatterInfo: state.chatterInfo,
-		session: state.session
+		session: state.session,
+        history: state.history
 	};
 };
 
@@ -148,6 +150,7 @@ Home.propTypes = {
     dispatch: PropTypes.func,
 	operatorInfo: PropTypes.object,
 	chatterInfo: PropTypes.object,
-	session: PropTypes.object
+	session: PropTypes.object,
+    history: PropTypes.array
 };
 export default connect(mapStateToProps)(Home);
