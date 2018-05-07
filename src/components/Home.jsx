@@ -10,9 +10,16 @@ import { connect } from 'react-redux';
 // import types from './../constants';
 import PropTypes from 'prop-types';
 import constants from './../constants';
+import * as actions from './../actions';
+
 const {firebaseConfig, types} = constants;
 
 class Home extends React.Component {
+    componentWillMount() {
+        const { dispatch } = this.props;
+        const { watchFirebaseMessagesRef } = actions;
+        dispatch(watchFirebaseMessagesRef());
+    }
     render() {
         const homeStyle = {
 				boxSizing: 'border-box',

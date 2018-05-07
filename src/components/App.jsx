@@ -17,6 +17,7 @@ function App(){
 		display:'flex',
 		justifyContent: 'center',
 	};
+
 	return(
 		<div style={appStyle}>
 			<style global jsx>

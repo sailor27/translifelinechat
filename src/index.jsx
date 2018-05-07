@@ -6,9 +6,9 @@ import { HashRouter } from 'react-router-dom';
 import {createStore, applyMiddleware} from 'redux';
 import rootReducer from './reducers/index';
 import { Provider } from 'react-redux';
-import middlewareLogger from './middleware/middleware-logger';
+import thunkMiddleware from 'redux-thunk';
 
-const store = createStore(rootReducer, applyMiddleware(middlewareLogger));
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
 
 let unsubscribe = store.subscribe(() => {
   console.log(store.getState());
@@ -17,13 +17,13 @@ let unsubscribe = store.subscribe(() => {
 const render = (Component) => {
   ReactDOM.render(
 
-    <AppContainer>
-      <HashRouter>
-        <Provider store={store}>
-          <Component/>
-        </Provider>
-      </HashRouter>
-    </AppContainer>,
+	<AppContainer>
+		<HashRouter>
+			<Provider store={store}>
+				<Component/>
+			</Provider>
+		</HashRouter>
+	</AppContainer>,
     document.getElementById('react-app-root')
   );
 };

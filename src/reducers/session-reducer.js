@@ -27,6 +27,11 @@ export default (state = defaultState.session, action) => {
           });
 
           return newState;
+        case types.RECEIVE_MESSAGE:
+        newState = Object.assign({}, state);
+        newState[action.message.id] = action.message;
+        
+            return newState;
 
 		case types.ADD_NOTES:
 			newNotes = notes;

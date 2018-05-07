@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 // import types from './../constants';
 import constants from './../constants';
+import { addMessage } from './../actions';
 const {firebaseConfig, types} = constants;
 
 class Session extends React.Component{
@@ -19,6 +20,8 @@ class Session extends React.Component{
 		this.props.addSession();
 	}
 	render(){
+
+        console.log(this.props);
 
 		const sessionStyle = {
 			marginTop: '90px',
@@ -41,21 +44,25 @@ class Session extends React.Component{
 		let user = this.props.currentUser;
 		let messages = this.props.currentSession.messages;
 		let time;
-		let _string = null;
+		// let _string = null;
 
 		const { dispatch } = this.props;
 
+        let _timeStamp = null;
+        let _isOp = null;
+        let _string = null;
 		function handleAddingMessage(e){
 			e.preventDefault();
 			console.log('time to change the state ⏲');
-			const action = {
-				type: types.ADD_MESSAGE,
-				timeStamp: Date.now(),
-				isOp: user.isOperator,
-				string: _string.value
-			};
-			dispatch(action);
-			_string.value = '';
+            dispatch(addMessage(Date.now(), user.isOperator, _string.value));
+			// const action = {
+			// 	type: types.ADD_MESSAGE,
+			// 	timeStamp: Date.now(),
+			// 	isOp: user.isOperator,
+			// 	string: _string.value
+			// };
+			// dispatch(action);
+			// _string.value = '';
 		}
 	return (
 		<div style={sessionStyle}>

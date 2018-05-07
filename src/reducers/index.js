@@ -17,7 +17,7 @@ const appReducer = combineReducers({
 	history: historyReducer
 });
 
-const rootReducer = (state,action) => {
+const rootReducer = (state, action) => {
 	if(action.type === 'DISCONNECT_USER'){
 		state = defaultState;
 		console.log(state);
