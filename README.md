@@ -91,6 +91,3 @@ Future Enhancements Required Tools:
 
 ## Component Tree Visual
 ![alt text](src/assets/images/ComponentTree.png)
-
-## Issues/Bugs 🐛
-**I am struggling with understanding how to build my component tree.**
